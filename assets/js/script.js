@@ -17,12 +17,16 @@ const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 const winningMessageTextElement = document.querySelector('[data-winning-message]');
 const winningMessageElement = document.getElementById('winningMessage');
+const restartButton = document.getElementById('restartButton')
 // Start the Game.  Initialise playersTurn to cross.  Add Event Listener to each cell in the board but only allow it to be clicked once.
 gameStart();
 
 function gameStart() {
+    winningMessageElement.classList.remove('show');
     playersTurn = true;
     cellElements.forEach(_cell => {
+        _cell.classList.remove(circleClass);
+        _cell.classList.remove(crossClass);
         _cell.addEventListener('click', handleClick, { once: true });
     });
 
@@ -98,3 +102,6 @@ function setBoardHoverClass() {
     board.classList.remove(circleClass);
     playersTurn ? board.classList.add(circleClass) : board.classList.add(crossClass);
 };
+
+restartButton.addEventListener('click', gameStart);
+
