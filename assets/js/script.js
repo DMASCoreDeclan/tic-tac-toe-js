@@ -27,6 +27,7 @@ function gameStart() {
     cellElements.forEach(_cell => {
         _cell.classList.remove(circleClass);
         _cell.classList.remove(crossClass);
+        _cell.removeEventListener('click', handleClick)
         _cell.addEventListener('click', handleClick, { once: true });
     });
 

@@ -18,7 +18,7 @@ body {
 /*Create Board*/
 .board {
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -163,4 +163,8 @@ body {
 /* this allows touchscreens to use the first touch in a cell to identify whose turn it is.  Pressing the same cell a second time places the mark in that cell */
 @media (pointer: coarse) {
    
+}
+
+.center {
+    text-align: center;
 }
