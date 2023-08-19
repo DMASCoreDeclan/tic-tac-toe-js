@@ -40,13 +40,16 @@ function handleClick(e) {
     //Check for Win
     if (chechWin(currentClass)) {
         endGame(false);
-    }
     //Check for Draw
+    } else if (CheckDraw()) {
+        endGame(true);
+    } else {
+        //SwitchTurn between cross and circle
+        switchTurns();
+        //Set .board to show hover effect of whose turn it is next
+        setBoardHoverClass(); 
+    }
 
-    //SwitchTurn between cross and circle
-    switchTurns();
-    //Set .board to show hover effect of whose turn it is next
-    setBoardHoverClass(); 
 };
 
 // identifies the clickedCell and adds the cross or circle class to the div
@@ -64,9 +67,19 @@ function chechWin(currentClass) {
 
 };
 
+
+//checks to see if every cell in .cell has a class of .circle OR .cross then this.  
+//I used destructuring here as cellElements is a variable and not an Array.  .every only works with Arrays.  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+function CheckDraw() {
+    return [...cellElements].every(cell => {
+        return cell.classList.contains(circleClass) || cell.classList.contains(crossClass)
+    })
+
+};
+
 function endGame(draw) {
     if(draw) {
-
+        winningMessageTextElement.innerText = `Draw!`
     } else {
         winningMessageTextElement.innerText = `${playersTurn ? "O" : "X" } Wins!`
     }
