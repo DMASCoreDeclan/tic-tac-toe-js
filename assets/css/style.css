@@ -61,7 +61,7 @@ body {
 }
 
 /*Change Cursor when cell is occupied with a Mark */
-.cell.x, 
+.cell.cross, 
 .cell.circle {
     cursor: not-allowed;
 }
@@ -69,10 +69,10 @@ body {
 /* Create hover effect to indicate whose turn it is, Cross or Circle*/
 /* Create Mark - Cross or Circle within .cell*/
 /* Create Cross within .cell*/
-.cell.x::before, 
-.cell.x::after, 
-.board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.cell.cross::before, 
+.cell.cross::after, 
+.board.cross .cell:not(.cross):not(.circle):hover::before,
+.board.cross .cell:not(.cross):not(.circle):hover::after {
     content: "";
     position: absolute;
     width: calc(var(--mark-size) * .15);
@@ -80,26 +80,26 @@ body {
     background-color: black;
 }
 
-.cell.x::before,
-.board.x .cell:not(.x):not(.circle):hover::before {
+.cell.cross::before,
+.board.cross .cell:not(.cross):not(.circle):hover::before {
     transform: rotate(45deg);
 }
 
-.cell.x::after,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.cell.cross::after,
+.board.cross .cell:not(.cross):not(.circle):hover::after {
     transform: rotate(-45deg);
 }
 
-.board.x .cell:not(.x):not(.circle):hover::before, 
-.board.x .cell:not(.x):not(.circle):hover::after {
+.board.cross .cell:not(.cross):not(.circle):hover::before, 
+.board.cross .cell:not(.cross):not(.circle):hover::after {
     background-color: lightgray;
 }
 
 /*Create Circle within .cell*/
 .cell.circle::before,
 .cell.circle::after,
-.board.circle .cell:not(.x):not(.circle):hover::before,
-.board.circle .cell:not(.x):not(.circle):hover::after {
+.board.circle .cell:not(.cross):not(.circle):hover::before,
+.board.circle .cell:not(.cross):not(.circle):hover::after {
     content: "";
     position: absolute;
     border-radius: 50%;
@@ -107,20 +107,20 @@ body {
 }
 
 .cell.circle::before, 
-.board.circle .cell:not(.x):not(.circle):hover::before {
+.board.circle .cell:not(.cross):not(.circle):hover::before {
     width: var(--mark-size);
     height: var(--mark-size);
     background-color: black;
 }
 
 .cell.circle::after,
-.board.circle .cell:not(.x):not(.circle):hover::after {
+.board.circle .cell:not(.cross):not(.circle):hover::after {
     width: calc(var(--mark-size) *.7);
     height: calc(var(--mark-size) *.7);
     background-color: white;
 }
 
-.board.circle .cell:not(.x):not(.circle):hover::before {
+.board.circle .cell:not(.cross):not(.circle):hover::before {
     background-color: lightgray;
 }
 
