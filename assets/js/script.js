@@ -22,8 +22,9 @@ function handleClick(e) {
     //Check for Win
     //Check for Draw
 
-    //SwitchTurn
-    switchTurns()
+    //SwitchTurn between cross and circle
+    switchTurns();
+    setBoardHoverClass();
 }
 
 // identifies the clickedCell and adds the cross or circle class to the div
@@ -34,4 +35,11 @@ function placeMark(clickedCell, currentClass) {
 // identifies the turn from the playersTurn and switches it from cross to circle or circle to cross 
 function switchTurns() {
     playersTurn = !playersTurn;
+}
+
+// identifies which hover class to apply to the board to indicate which playerTurn it is next
+function setBoardHoverClass() {
+    board.classList.remove(crossClass);
+    board.classList.remove(circleClass);
+    playersTurn ? board.classList.add(circleClass) : board.classList.add(crossClass);
 }
