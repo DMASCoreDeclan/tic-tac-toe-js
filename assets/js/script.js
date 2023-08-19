@@ -34,7 +34,7 @@ function handleClick(e) {
 
     //SwitchTurn between cross and circle
     switchTurns();
-    setBoardHoverClass();
+    setBoardHoverClass(); 
 }
 
 // identifies the clickedCell and adds the cross or circle class to the div
