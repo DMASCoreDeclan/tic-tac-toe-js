@@ -159,3 +159,8 @@ body {
 .winning-message.show {
     display: flex;
 }
+
+/* this allows touchscreens to use the first touch in a cell to identify whose turn it is.  Pressing the same cell a second time places the mark in that cell */
+@media (pointer: coarse) {
+   
+}

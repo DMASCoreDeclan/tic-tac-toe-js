@@ -6,11 +6,21 @@ const circleClass = 'circle';
 const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 
+// Start the Game.  Initialise playersTurn to cross.  Add Event Listener to each cell in the board but only allow it to be clicked once.
 // Start the Game.  Initialise playersTurn to cross.  Add Event Listener to each cell in the board but only allow it to be clicked once
-playersTurn = true;
-cellElements.forEach(_cell => {
-    _cell.addEventListener('click', handleClick, { once: true });
-});
+
+
+gameStart();
+
+function gameStart() {
+    playersTurn = true;
+    cellElements.forEach(_cell => {
+        _cell.addEventListener('click', handleClick, { once: true });
+    });
+
+    //     console.log(playersTurn);
+    setBoardHoverClass();
+}
 
 // this function Places a the Mark we defined in CSS, Checks to see if the has resulted in a Win or a Draw, if not, swap turns so that a new Mark can be placed.  Once this function completes either through a Win or a Draw, calls a restart  function to allow the users to play again.
 function handleClick(e) {
