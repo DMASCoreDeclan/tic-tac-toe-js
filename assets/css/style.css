@@ -211,6 +211,18 @@ body {
     left: 80%;
 }
 
+.strike-diagonal-tl2br {
+    width: 120%;
+    height: 4px;
+    transform: rotate(45deg);
+}
+
+.strike-diagonal-tr2bl {
+    width: 120%;
+    height: 4px;
+    transform: rotate(-45deg);
+}
+
 
 
 /* this allows touchscreens to use the first touch in a cell to identify whose turn it is.  Pressing the same cell a second time places the mark in that cell */
