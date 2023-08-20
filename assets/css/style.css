@@ -15,7 +15,8 @@ h1 {
     font-family: "Permanent Marker", cursive;
     font-size: 5rem;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
     cursor: pointer;    
     position: relative;
 }
@@ -122,4 +123,14 @@ h2 {
 
 .show {
     display: block;
+}
+
+.x-hover:hover::after {
+    content: "X";
+    opacity: 0.4;
+}
+
+.o-hover:hover::after {
+    content: "O";
+    opacity: 0.4;
 }
