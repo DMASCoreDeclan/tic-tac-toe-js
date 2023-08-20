@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap cursive" rel="stylesheet">
     <title>tic-tac-toe-js</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> <!--Link to favicon for <title> Element-->
-    <link rel="stylesheet" href="assets/css/style.css"> <!--Link to CSS-->
-    <script src="assets/js/script.js" defer></script> <!-- defer prevents the script from loading until HTML Elements are loaded-->
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!--Link to favicon for <title> Element-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!--Link to CSS-->
+    <script src="assets/js/script.js" defer></script>
+    <!-- defer prevents the script from loading until HTML Elements are loaded-->
+  </head>
+  <body>
     <!--class used by CSS.  id and data* used to return infomation from JaveScrip-->
     <h1 class="center">Tic Tac Toe</h1>
-    <div class="board" id="board">    
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="strike" id="strike"></div>
+    <div class="gameBoard" id="board">
+      <div data-cell-index="1" class="cell right-border bottom-border">X</div>
+      <div data-cell-index="2" class="cell right-border bottom-border">O</div>
+      <div data-cell-index="3" class="cell bottom-border">3</div>
+      <div data-cell-index="4" class="cell right-border bottom-border ">4</div>
+      <div data-cell-index="5" class="cell right-border bottom-border">5</div>
+      <div data-cell-index="6" class="cell bottom-border">6</div>
+      <div data-cell-index="7" class="cell right-border ">7</div>
+      <div data-cell-index="8" class="cell right-border ">8</div>
+      <div data-cell-index="9" class="cell">9</div>
+      <div class="strike" id="strike"></div>
     </div>
     <div class="center" id="statusMessage">some text</div>
     <div class="winning-message" id="winningMessage">
-        <div data-winning-message></div>
-        <button id="restartButton">Restart</button> 
+      <div data-winning-message></div>
+      <button id="restartButton">Restart</button>
     </div>
-    
-</body>
+  </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic-tac-toe-js</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> <!--Link to favicon for <title> Element-->
+    <link rel="stylesheet" href="assets/css/style.css"> <!--Link to CSS-->
+    <script src="assets/js/script.js" defer></script> <!-- defer prevents the script from loading until HTML Elements are loaded-->
+</head>
+<body>
+    <!--class used by CSS.  id and data* used to return infomation from JaveScrip-->
+    <h1 class="center">Tic Tac Toe</h1>
+    <div class="board" id="board">    
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="strike" id="strike"></div>
+    </div>
+    <div class="center" id="statusMessage">some text</div>
+    <div class="winning-message" id="winningMessage">
+        <div data-winning-message></div>
+        <button id="restartButton">Restart</button> 
+    </div>
+    
+</body>
+</html>
