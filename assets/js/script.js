@@ -23,6 +23,7 @@ const gameOverSound = new Audio('assets/sounds/gameOverSound.wav')
 
 cells.forEach((cell) => cell.addEventListener('click', handleClick));
 
+//Apply a Hover Effect to indicate whose turn it is
 function hoverText() {
     //Remove existing hover classes
     cells.forEach((cell) => {
@@ -38,8 +39,10 @@ function hoverText() {
     });
 }
 
+//Initialise Hover Effect
 hoverText();
 
+// Logic to indicate whether a cell can be clicked, whose turn it is and evaluate the results each time a mark is placed on the gameBoard
 function handleClick(clickedCell) {
     //If the game is over, do not execute
     if (gameMessages.classList.contains('show')) {
@@ -53,7 +56,7 @@ function handleClick(clickedCell) {
     if (cell.innerText != "") {
         return;
     }; 
-
+    // Place a mark of an X or an O on the gameBoard
     if (turn === player_x) {
         cell.innerText = player_x
         gameBoard[cellNumber] = player_x;
@@ -66,6 +69,7 @@ function handleClick(clickedCell) {
 
     clickSound.volume = .05; 
     clickSound.play();
+
     hoverText();
     console.log(turn,  cells, cellNumber, gameBoard)
 };
