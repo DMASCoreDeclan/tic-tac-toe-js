@@ -23,6 +23,22 @@ const gameOverSound = new Audio('assets/sounds/gameOverSound.wav')
 
 cells.forEach((cell) => cell.addEventListener('click', handleClick));
 
+function hoverText() {
+    //Remove existing hover classes
+    cells.forEach((cell) => {
+        cell.classList.remove('x-hover')
+        cell.classList.remove('o-hover')
+    });
+
+    const hoverClass = `${turn.toLowerCase()}-hover`;
+    cells.forEach((cell) => {
+        if (cell.innerText == "") {
+            cell.classList.add(hoverClass);
+        }
+    });
+}
+
+hoverText();
 
 function handleClick(clickedCell) {
     //If the game is over, do not execute
@@ -50,7 +66,7 @@ function handleClick(clickedCell) {
 
     clickSound.volume = .05; 
     clickSound.play();
-
-    console.log(turn,  cell, cellNumber, gameBoard)
+    hoverText();
+    console.log(turn,  cells, cellNumber, gameBoard)
 };
 
