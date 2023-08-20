@@ -6,6 +6,10 @@
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -17,14 +21,15 @@ body {
 
 /*Create Board*/
 .board {
-    width: 100vw;
-    height: 50vh;
+    width: 330px;
+    height: 330px;
     display: grid;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3, auto);
+    position: relative;
 }
 
 /*Create cells within .board*/
@@ -50,6 +55,10 @@ body {
 .cell:nth-child(8),
 .cell:nth-child(7) {
     border-bottom: 0;
+}
+
+.cell:nth-child(9) {
+    border-bottom: none;
 }
 
 .cell:nth-child(3n + 1) {
@@ -159,6 +168,50 @@ body {
 .winning-message.show {
     display: flex;
 }
+
+/* Strikethrough for winning combination */
+.strike {
+    position: absolute;
+    background-color: darkred;
+}
+
+.strike-row-1 {
+    width: 90%;
+    height: 4px;
+    top: 19%;
+}
+
+.strike-row-2 {
+    width: 90%;
+    height: 4px;
+    top: 49.5%;
+}
+
+.strike-row-3 {
+    width: 90%;
+    height: 4px;
+    top: 80%;
+}
+
+.strike-col-1 {
+    height: 90%;
+    width: 4px;
+    left: 19%;
+}
+
+.strike-col-2 {
+    height: 90%;
+    width: 4px;
+    left: 49.5%;
+}
+
+.strike-col-3 {
+    height: 90%;
+    width: 4px;
+    left: 80%;
+}
+
+
 
 /* this allows touchscreens to use the first touch in a cell to identify whose turn it is.  Pressing the same cell a second time places the mark in that cell */
 @media (pointer: coarse) {
