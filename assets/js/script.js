@@ -1,12 +1,9 @@
 //Define constants for every Game
-const crossClass = 'X';
-const circleClass = 'O';
+// const crossClass = 'X';
+// const circleClass = 'O';
 const cells = document.querySelectorAll('.cell')
 const player_x = "X";
 const player_o = "O";
-
-// Randomly pic the start player
-// let startturn = ((Math.floor(Math.random() * 2) + 1) > 1) ? player_x : player_o;
 let turn = player_x;
 
 // Create the Board Array to keep track of where players place their O's ans O's
