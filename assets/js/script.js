@@ -89,15 +89,12 @@ function handleClick(clickedCell) {
 
     //Indicate an X or an O for where the current player can choose his next cell
     hoverText();
+
     //Check to see if the last cell occupied produces a Winner or a Draw
     checkResult();
 
-
     // console.log(turn,  cells, cellNumber, gameBoard, checkResult)
 };
-
-
-
 
 function checkResult() {
     //Check for Winner
@@ -118,20 +115,19 @@ function checkResult() {
         };
         
     };
+    
     //Check for Draw
     //If the previous check does not end the game, check to see if there are any remaining empty cells in the gameBoard.  If there are no emoty cells left, its a draw.  
     const noEmptyCells = gameBoard.every((cell) => cell !== "" );
     if (noEmptyCells) {
-    gameOver(null);
+        gameOver("Draw");
     }
-
-    
-    
 };
+
 
 function gameOver(cellContents1) {
     let resultText = `Draw!`;
-    if (cellContents1 != null) {
+    if (cellContents1 != "Draw") {
         resultText = `Winner is ${cellContents1}!`
     };
     gameMessages.className = "show";
@@ -141,3 +137,13 @@ function gameOver(cellContents1) {
     gameOverSound.play();
 }
 
+function restartGame () {
+    strike.className = 'strike';
+    gameMessages.className = 'hide';
+    gameBoard.fill("");
+    cells.forEach((cell) => (cell.innerText = ""));
+    turn = player_x;
+    hoverText();
+}
+
+restartButton.addEventListener('click', restartGame);
