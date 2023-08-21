@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Adds a google font Permanent Marker for the Xs and Os placed in the cells of the grid -->
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap cursive" rel="stylesheet">
     <title>tic-tac-toe-js</title>
+    <!-- Link to favicon for <title> Element-->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
-    <!--Link to favicon for <title> Element-->
+    <!-- Link to CSS-->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!--Link to CSS-->
-    <script src="assets/js/script.js" defer></script>
-    <!-- defer prevents the script from loading until HTML Elements are loaded-->
+    <!-- Link to JavaScrip using defer to prevent the script from loading until HTML Elements are loaded-->
+    <script src="assets/js/script.js" defer></script>    
   </head>
   <body>
-    <!--class used by CSS.  id and data* used to return infomation from JaveScrip-->
+    <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
     <h1 class="center">Tic Tac Toe</h1>
     <div class="gameBoard" id="board">
       <div data-cell-index="1" class="cell right-border bottom-border"></div>
@@ -27,10 +28,14 @@
       <div data-cell-index="7" class="cell right-border "></div>
       <div data-cell-index="8" class="cell right-border "></div>
       <div data-cell-index="9" class="cell"></div>
+      <!-- this div is a placeholder to add approprite strkethroughs calculated by JavaScript denoting which line resulted in a win-->
       <div class="strike" id="strike"></div>
     </div>
+    <!-- this div is hidden by default.  JavaScript makes it appear when the game is over and it display the result and the winner, if there is one.  This div contains the restart button which only display when the game is over-->
     <div id="game-messages" class="hide">
+      <!-- this div shows the resultText determined by JavaScript-->
       <h2 id="game-result"></h2>
+      <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
       <button id="restart-button">Restart!</button>
     </div>
   </body>
