@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: black;
-    color: greenyellow;
+    color: #698f3f
 }
 
 /* h1 font-size 4rem changes to 3.5rem with media queries */
@@ -37,18 +37,18 @@ h1 {
 
 /* Used to add a right border to col 1 and col 2 of the grid */
 .right-border {
-    border-right: 0.2rem solid indigo;
+    border-right: 0.2rem solid #fbfaf8;
 }
 
 /* Used to add a bottom border to row 1 and row 2 of the grid */
 .bottom-border {
-    border-bottom: 0.2rem solid indigo;
+    border-bottom: 0.2rem solid #fbfaf8;
 }
 
 /* Used to add a strike placeholder to a div, which will be used if a player gets 3 in a row */
 .strike {
     position: absolute;
-    background-color: darkred;
+    background-color: #fbfaf8;
 }
 
 /* Javascrip adds this class to the strike div if there are three identical cell contents in row 1 */
@@ -112,7 +112,7 @@ h1 {
 /* Javascrip adds this class to the strike div if there are three identical cell contents in the diagonal from the top right cell to the bottom left cell (row1col3: row3col1).  The div defaults to a class of .hide but changes to .show when the game is over*/
 #game-messages {
     text-align: center;
-    border: indigo 8px solid;
+    border: #fbfaf8 4px solid;
     padding: 20px;
     margin-top: 30px;   
 }
@@ -125,9 +125,9 @@ h2 {
 
 /* The button is within the #game-message div and only shows when the game is over.  Javascript resets the .gameBoard and sertarts the game when this button is clicked */
 #restart-button {
-    background-color: transparent;
-    color: currentColor;
-    border: currentColor 1px solid;
+    /* background-color: transparent; */
+    color: black;
+    border: fbfaf8 1px solid;
     padding: 10px;
     font-size: 1.5em;
 }

@@ -144,3 +144,8 @@ function restartGame () {
 }
 
 restartButton.addEventListener('click', restartGame);
+
+function showAlert() {
+    var myText = "Would you like to play Tic Tac Toe?";
+    alert(myText);
+}

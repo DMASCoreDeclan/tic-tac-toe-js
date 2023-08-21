@@ -6,6 +6,11 @@ This is the Code Institute student template for Codeanywhere. If you are using G
 
 You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **July 26th, 2023**
 
+Contrast Checking
+https://webaim.org/resources/contrastchecker/?fcolor=ABD43B&bcolor=D852A6
+https://coolors.co/0a122a-698f3f-fbfaf8-e7decd-804e49
+
+
 ## Codeanywhere Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
