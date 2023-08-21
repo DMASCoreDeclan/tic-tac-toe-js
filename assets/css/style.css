@@ -105,11 +105,11 @@ h2 {
     border: indigo 8px solid;
     padding: 20px;
     margin-top: 30px;
-    width: 50%
+    /* width: 50% */
     
 }
 
-#restartButton {
+#restart-button {
     background-color: transparent;
     color: currentColor;
     border: currentColor 1px solid;

@@ -21,6 +21,21 @@ const restartButton = document.getElementById('restart-button');
 const clickSound = new Audio('assets/sounds/clickSound.wav')
 const gameOverSound = new Audio('assets/sounds/gameOverSound.wav')
 
+//Array containing Objects to determine if the last click produced a winner and if it did, apply a css strikeClass to the .gameBoard to the winning moves
+const winningPossibilities = [
+    //Row
+    { combination: [0, 1, 2], strikeClass: "strike-row-1" },
+    { combination: [3, 4, 5], strikeClass: "strike-row-2" },
+    { combination: [6, 7, 8], strikeClass: "strike-row-3" },
+    //Columns
+    { combination: [0, 3, 6], strikeClass: "strike-col-1" },
+    { combination: [1, 4, 7], strikeClass: "strike-col-2" },
+    { combination: [2, 5, 8], strikeClass: "strike-col-3" },
+    //Diagonals
+    { combination: [2, 4, 6], strikeClass: "strike-diagonal-1" },
+    { combination: [0, 4, 8], strikeClass: "strike-diagonal-2" }
+
+];
 //Add an Event Listener to each cell and determine what to do when a cell is clicked
 cells.forEach((cell) => cell.addEventListener('click', handleClick));
 
@@ -81,20 +96,7 @@ function handleClick(clickedCell) {
     // console.log(turn,  cells, cellNumber, gameBoard, checkResult)
 };
 
-const winningPossibilities = [
-    //Row
-    {combination: [0, 1, 2], strikeClass: "strike-row-1"},
-    {combination: [3, 4, 5], strikeClass: "strike-row-2"},
-    {combination: [6, 7, 8], strikeClass: "strike-row-3"},
-    //Columns
-    {combination: [0, 3, 6], strikeClass: "strike-col-1"},
-    {combination: [1, 4, 7], strikeClass: "strike-col-2"},
-    {combination: [2, 5, 8], strikeClass: "strike-col-3"},
-    //Diagonals
-    { combination: [2, 4, 6], strikeClass: "strike-diagonal-1"},
-    {combination: [0, 4, 8], strikeClass: "strike-diagonal-2"}
-    
-]
+
 
 
 function checkResult() {
@@ -108,17 +110,34 @@ function checkResult() {
         const cellContents1 = gameBoard[combination[0]]; 
         const cellContents2 = gameBoard[combination[1]]; 
         const cellContents3 = gameBoard[combination[2]]; 
-
+        //If the first cell in the array is not empty and its equal to the two corresponding elements in the array, the game is over
         if (cellContents1 != "" && cellContents1 === cellContents2 && cellContents1 === cellContents3) {
-            strike.classList.add(strikeClass)
-            console.log(combination, strikeClass)
+            strike.classList.add(strikeClass);
+            gameOver(cellContents1);
+            return;
         };
         
-        // console.log(cellContents1, cellContents2, cellContents3);
     };
     //Check for Draw
+    //If the previous check does not end the game, check to see if there are any remaining empty cells in the gameBoard.  If there are no emoty cells left, its a draw.  
+    const noEmptyCells = gameBoard.every((cell) => cell !== "" );
+    if (noEmptyCells) {
+    gameOver(null);
+    }
+
     
     
 };
 
+function gameOver(cellContents1) {
+    let resultText = `Draw!`;
+    if (cellContents1 != null) {
+        resultText = `Winner is ${cellContents1}!`
+    };
+    gameMessages.className = "show";
+    gameResult.innerText = resultText;
+    //Play sound when a cell is clicked
+    gameOverSound.volume = .05;
+    gameOverSound.play();
+}
 
