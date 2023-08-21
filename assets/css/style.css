@@ -1,3 +1,4 @@
+/* Document default properties */
 body {
     display: flex;
     flex-direction: column;
@@ -6,11 +7,13 @@ body {
     color: greenyellow;
 }
 
+/* h1 font-size 4rem changes to 3.5rem with media queries */
 h1 {
     font-size: 4rem;
     color: currentColor;
 }
 
+/* Create a 3 x 100px by 3 x 100 px grid gameBoard with a style of Permanent MArker */
 .gameBoard {
     font-family: "Permanent Marker", cursive;
     font-size: 5rem;
@@ -21,7 +24,7 @@ h1 {
     position: relative;
 }
 
-
+/* sets a min-size for the cells and makes the contents align and justify center */
 .cell {
     min-width: 100px;
     min-height: 100px;
@@ -32,55 +35,65 @@ h1 {
     align-items: center;
 }
 
+/* Used to add a right border to col 1 and col 2 of the grid */
 .right-border {
     border-right: 0.2rem solid indigo;
 }
 
+/* Used to add a bottom border to row 1 and row 2 of the grid */
 .bottom-border {
     border-bottom: 0.2rem solid indigo;
 }
 
+/* Used to add a strike placeholder to a div, which will be used if a player gets 3 in a row */
 .strike {
     position: absolute;
     background-color: darkred;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in row 1 */
 .strike-row-1 {
     width: 100%;
     height: 3px;
     top: 17%;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in row 2 */
 .strike-row-2 {
     width: 100%;
     height: 3px;
     top: 50%;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in row 3 */
 .strike-row-3 {
     width: 100%;
     height: 3px;
     bottom: 16%;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in col 1 */
 .strike-col-1 {
     height: 100%;
     width: 3px;
     left: 17%;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in col 2 */
 .strike-col-2 {
     height: 100%;
     width: 3px;
     left: 50%;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in col 3 */
 .strike-col-3 {
     height: 100%;
     width: 3px;
     right: 15%;
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in the diagonal from the top right cell to the bottom left cell (row1col3: row3col1) */
 .strike-diagonal-1 {
     width: 100%;
     height: 4px;
@@ -88,6 +101,7 @@ h1 {
     transform: skewY(-45deg);
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in the diagonal from the top left cell to the bottom right cell (row1col1: row3col3) */
 .strike-diagonal-2 {
     width: 100%;
     height: 4px;
@@ -95,20 +109,21 @@ h1 {
     transform: skewY(45deg);
 }
 
+/* Javascrip adds this class to the strike div if there are three identical cell contents in the diagonal from the top right cell to the bottom left cell (row1col3: row3col1).  The div defaults to a class of .hide but changes to .show when the game is over*/
+#game-messages {
+    text-align: center;
+    border: indigo 8px solid;
+    padding: 20px;
+    margin-top: 30px;   
+}
+
+/* Javascrip uses this h2 for resultText messages indicating if its a Win or a Draw */
 h2 {
     color: currentColor;
     font-size: 3rem;
 }
 
-#game-messages {
-    text-align: center;
-    border: indigo 8px solid;
-    padding: 20px;
-    margin-top: 30px;
-    /* width: 50% */
-    
-}
-
+/* The button is within the #game-message div and only shows when the game is over.  Javascript resets the .gameBoard and sertarts the game when this button is clicked */
 #restart-button {
     background-color: transparent;
     color: currentColor;
@@ -117,24 +132,29 @@ h2 {
     font-size: 1.5em;
 }
 
+/* This is the default class for #game-message.  Javascript reapplies this class when the game restarts */
 .hide {
     display: none;
 }
 
+/* Javascript applies this class when the game is over.  It displays the result and a restart button */
 .show {
     display: block;
 }
 
+/* Javascript applies this class when it is Xs turn and it hovers over an empty cell */
 .x-hover:hover::after {
     content: "X";
     opacity: 0.4;
 }
 
+/* Javascript applies this class when it is Ys turn and it hovers over an empty cell */
 .o-hover:hover::after {
     content: "O";
     opacity: 0.4;
 }
 
+/* h1 font-size changes from 4rem to 3.5rem @ 328px */
 @media only screen and (max-width: 328px) {
     h1 {
             font-size: 3.5rem;
