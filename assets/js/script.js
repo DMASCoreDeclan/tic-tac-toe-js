@@ -1,7 +1,7 @@
+/*jshint esversion: 6 */
+
 //Define constants for every Game
-// const crossClass = 'X';
-// const circleClass = 'O';
-const cells = document.querySelectorAll('.cell')
+const cells = document.querySelectorAll('.cell');
 const player_x = "X";
 const player_o = "O";
 let turn = player_x;
@@ -10,13 +10,16 @@ let turn = player_x;
 const gameBoard = Array(cells.length);
 gameBoard.fill("");
 
-//Get element and sound placeholders
+//Get element placeholders
 const strike = document.getElementById('strike');
 const gameMessages = document.getElementById('game-messages');
 const gameResult = document.getElementById('game-result');
 const restartButton = document.getElementById('restart-button');
-const clickSound = new Audio('assets/sounds/clickSound.wav')
-const gameOverSound = new Audio('assets/sounds/gameOverSound.wav')
+
+//Get sound placeholders
+const clickSound = new Audio('assets/sounds/clickSound.wav');
+const gameOverSound = new Audio('assets/sounds/gameOverSound.wav');
+const muteButton = document.getElementById('mute-button');
 
 //Array containing Objects to determine if the last click produced a winner and if it did, apply a css strikeClass to the .gameBoard to the winning moves
 const winningPossibilities = [
@@ -33,6 +36,7 @@ const winningPossibilities = [
     { combination: [0, 4, 8], strikeClass: "strike-diagonal-2" }
 
 ];
+
 //Add an Event Listener to each cell and determine what to do when a cell is clicked
 cells.forEach((cell) => cell.addEventListener('click', handleClick));
 
@@ -40,8 +44,8 @@ cells.forEach((cell) => cell.addEventListener('click', handleClick));
 function hoverText() {
     //Remove existing hover classes
     cells.forEach((cell) => {
-        cell.classList.remove('x-hover')
-        cell.classList.remove('o-hover')
+        cell.classList.remove('x-hover');
+        cell.classList.remove('o-hover');
     });
 
     const hoverClass = `${turn.toLowerCase()}-hover`;
@@ -60,7 +64,7 @@ function handleClick(clickedCell) {
     //If the game is over, do not execute
     if (gameMessages.classList.contains('show')) {
         return;
-    };
+    }
     
     //Store the cell number that the user clicked on and get the cell number of that tile 
     const cell = clickedCell.target;
@@ -69,37 +73,32 @@ function handleClick(clickedCell) {
     //If the cell is not empty, do not execute
     if (cell.innerText != "") {
         return;
-    }; 
+    }
+
     // If the cell is empty, place a mark of an X or an O on the gameBoard
     if (turn === player_x) {
-        cell.innerText = player_x
+        cell.innerText = player_x;
         gameBoard[cellNumber] = player_x;
         turn = player_o;
     } else {
-        cell.innerText = player_o
+        cell.innerText = player_o;
         gameBoard[cellNumber] = player_o;
         turn = player_x;
     }
     //Play sound when a cell is clicked
-    clickSound.volume = .05; 
-    clickSound.play();
+    playClick();
 
     //Indicate an X or an O for where the current player can choose his next cell
     hoverText();
 
     //Check to see if the last cell occupied produces a Winner or a Draw
     checkResult();
-
-    // console.log(turn,  cells, cellNumber, gameBoard, checkResult)
-};
+}
 
 function checkResult() {
     //Check for Winner
     for(const winningPosibility of winningPossibilities) {
         //If the clicked cells have the same number as the winningPossibility, identify the corresponding strikeClass
-        // const combination = winningPossibilities.combination;
-        // const strikeClass = winningPossibilities.strikeClass;
-        //Object Destructuring, instead of using the two lines of code above
         const { combination, strikeClass } = winningPosibility;
         const cellContents1 = gameBoard[combination[0]]; 
         const cellContents2 = gameBoard[combination[1]]; 
@@ -109,9 +108,8 @@ function checkResult() {
             strike.classList.add(strikeClass);
             gameOver(cellContents1);
             return;
-        };
-        
-    };
+        }
+    }
     
     //Check for Draw
     //If the previous check does not end the game, check to see if there are any remaining empty cells in the gameBoard.  If there are no emoty cells left, its a draw.  
@@ -119,21 +117,22 @@ function checkResult() {
     if (noEmptyCells) {
         gameOver("Draw");
     }
-};
-
+}
 
 function gameOver(cellContents1) {
     let resultText = `Draw!`;
     if (cellContents1 != "Draw") {
-        resultText = `Winner is ${cellContents1}!`
-    };
+        resultText = `Winner is ${cellContents1}!`;
+    }
+
+    //Show the gameMessage div and the gameResult
     gameMessages.className = "show";
     gameResult.innerText = resultText;
-    //Play sound when a cell is clicked
-    gameOverSound.volume = .05;
-    gameOverSound.play();
+    //Play sound when the game is Over
+    playGameOverSound();
 }
 
+//Reset the gameBoard, remove strikethrough classes, hide the gameMEssage div, replace the contents of the Xs and Os array with "" and make player_x the next player
 function restartGame () {
     strike.className = 'strike';
     gameMessages.className = 'hide';
@@ -143,4 +142,36 @@ function restartGame () {
     hoverText();
 }
 
+//Add event listener to the restartButton
 restartButton.addEventListener('click', restartGame);
+
+// GameSounds, Mute and Unmute Function
+// toggleMute toggles the unmute button to On/Off.  It then sets the clickSound and gameOverSound from mute to unmute.  The default state is for the sound to be muted
+function toggleMute() {
+    if (clickSound.muted) {
+        clickSound.muted = false;
+        gameOverSound.muted = false;
+        muteButton.setAttribute('id', 'unmute-button'); 
+    } else {
+        clickSound.muted = true;
+        gameOverSound.muted = true;
+        muteButton.setAttribute('id', 'mute-button');
+    }
+}
+
+//Add event listener to the muteButton and set both the clickedSound and gameOverSound to muted
+muteButton.addEventListener('click', toggleMute);
+clickSound.muted = true;
+gameOverSound.muted = true;
+
+// playClick when a cell is clicked on, if toggleMute is unmuted
+function playClick() {
+    clickSound.volume = 0.05;
+    clickSound.play();
+}
+
+// playGameOverSound when the game is over, if toggleMute is unmuted
+function playGameOverSound() {
+    gameOverSound.volume = 0.05;
+    gameOverSound.play();
+}

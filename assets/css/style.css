@@ -11,7 +11,10 @@ body {
 h1 {
     font-size: 4rem;
     color: currentColor;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 
 /* Create a 3 x 100px by 3 x 100 px grid gameBoard with a style of Permanent MArker */
 .gameBoard {
@@ -127,7 +130,7 @@ h2 {
 #restart-button {
     /* background-color: transparent; */
     color: black;
-    border: fbfaf8 1px solid;
+    border: #fbfaf8 1px solid;
     padding: 10px;
     font-size: 1.5em;
 }
@@ -154,6 +157,30 @@ h2 {
     opacity: 0.4;
 }
 
+/* gameOverSound and clickSound buttons.  Controled by JavaScript mute function.  */
+button {
+    border-style:none;
+    cursor: pointer;
+    outline: #698f3f;
+}
+
+#mute-button {
+    background: no-repeat url("/assets/images/mute.png");
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline: #698f3f;
+    /* color: black; */
+}
+
+#unmute-button {
+    background: no-repeat url("/assets/images/unmute.png");
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline: #698f3f;
+    /* color: black; */
+}
 
 /* Media Queries */
 /* To facilitate when the primary input mechanism includes a pointing device of limited accuracy,
