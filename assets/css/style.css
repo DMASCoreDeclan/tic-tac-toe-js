@@ -23,7 +23,7 @@ h1 {
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
-    cursor: pointer;    
+    cursor: pointer;
     position: relative;
 }
 
@@ -117,7 +117,7 @@ h1 {
     text-align: center;
     border: #fbfaf8 4px solid;
     padding: 20px;
-    margin-top: 30px;   
+    margin-top: 30px;
 }
 
 /* Javascrip uses this h2 for resultText messages indicating if its a Win or a Draw */
@@ -128,7 +128,6 @@ h2 {
 
 /* The button is within the #game-message div and only shows when the game is over.  Javascript resets the .gameBoard and sertarts the game when this button is clicked */
 #restart-button {
-    /* background-color: transparent; */
     color: black;
     border: #fbfaf8 1px solid;
     padding: 10px;
@@ -158,10 +157,12 @@ h2 {
 }
 
 /* gameOverSound and clickSound buttons.  Controled by JavaScript mute function.  */
-button {
-    border-style:none;
+button#mute-button,
+button#unmute-button {
+    border-style: none;
     cursor: pointer;
-    outline: #698f3f;
+    outline: white;
+    color: black;
 }
 
 #mute-button {
@@ -169,8 +170,6 @@ button {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    outline: #698f3f;
-    /* color: black; */
 }
 
 #unmute-button {
@@ -178,8 +177,6 @@ button {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    outline: #698f3f;
-    /* color: black; */
 }
 
 /* Media Queries */
@@ -189,20 +186,15 @@ such as a finger on a touchscreen. */
 
 /* h1, h2, padding, margin and font-size changes @ 328px */
 @media only screen and (max-width: 328px) {
-    h1 {
+    h1, h2 {
         font-size: 2.5rem;
         color: currentColor;
         margin: 5px;
     }
-    
+
     #game-messages {
         padding: 5px;
         margin-top: 5px;
-    }
-    
-    h2 {
-        font-size: 2rem;
-        margin: 5px;
     }
 
     #restart-button {
