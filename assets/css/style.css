@@ -166,14 +166,14 @@ button#unmute-button {
 }
 
 #mute-button {
-    background: no-repeat url("/assets/images/mute.png");
+    background: no-repeat url("../images/mute.png");
     width: 50px;
     height: 50px;
     cursor: pointer;
 }
 
 #unmute-button {
-    background: no-repeat url("/assets/images/unmute.png");
+    background: no-repeat url("../images/unmute.png");
     width: 50px;
     height: 50px;
     cursor: pointer;
