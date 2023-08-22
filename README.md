@@ -7,6 +7,13 @@ An empty gameBoard is presented with 9 cells in a 3 x 3 grid.  The cursor become
 
 In order to indicate whose turn it is, the user is presented with an X or an O when they hover over an empty cell.  If the cell is occupied, the hover is deactivated.  When the application is loaded, it initialises with X being the first player and thus, an X hovers over all 9 cells until X places their mark. 
 
+On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the square you'd like to select, but the mark is not placed unles you press the cell briefly.  
+
+
+TEST TO SEE if working with VS CODE Locally works
+
+
+
 The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
 ![Mind Yoga Am I Responsive Image](docs/readme_images/am-i-responsive.png)
