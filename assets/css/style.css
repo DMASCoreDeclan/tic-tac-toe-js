@@ -154,6 +154,12 @@ h2 {
     opacity: 0.4;
 }
 
+
+/* Media Queries */
+/* To facilitate when the primary input mechanism includes a pointing device of limited accuracy,
+such as a finger on a touchscreen. */
+@media (pointer: coarse) {}
+
 /* h1, h2, padding, margin and font-size changes @ 328px */
 @media only screen and (max-width: 328px) {
     h1 {

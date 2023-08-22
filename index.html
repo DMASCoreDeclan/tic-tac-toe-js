@@ -15,7 +15,7 @@
     <!-- Link to JavaScrip using defer to prevent the script from loading until HTML Elements are loaded-->
     <script src="assets/js/script.js" defer></script>    
   </head>
-  <body onload="showAlert()">
+  <body>
     <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
     <h1 class="center">Tic Tac Toe</h1>
     <div class="gameBoard" id="board">
@@ -37,6 +37,9 @@
       <h2 id="game-result"></h2>
       <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
       <button id="restart-button">Restart!</button>
+    </div>
+    <div>
+      <button id="mute-button"></button>
     </div>
   </body>
 </html>
