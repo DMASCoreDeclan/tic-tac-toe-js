@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 /* While all of the code used in this file has been typed by the author, it is heavily influenced by a hybrid of designs from the following developers:
     Kyle from Web Dev Simplified using https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s - index.html.old and script.js.old
     Ania Kubów from https://youtu.be/DRaWr0Dcbl0 - index.html.old and script.js.old
@@ -6,8 +8,6 @@
     Adam Khoury from https://www.youtube.com/watch?v=hsSXzdn_0Gg - how to toggleMute in JS
     While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional features such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodingWithAdam channel, but were renamed before upload and are called by different names in JS.
     The Favicon comes from https://icon-icons.com/icon/tic-tac-toe/39453 but was resized, renamed and recolored before being uploaded.*/
-
-/*jshint esversion: 6 */
 
 //Define constants for every Game
 const cells = document.querySelectorAll('.cell');
