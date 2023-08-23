@@ -36,7 +36,7 @@
   <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
   <h1 class="center">Tic Tac Toe</h1>
   <div>
-    <button id="mute-button"></button>
+    <button id="mute-button" alt="Sound Toggle to mute or unmute the sound"></button>
   </div>
 
   <!-- 3x3 grid for the gameBoard -->
@@ -58,11 +58,12 @@
   <!-- this div is hidden by default.  JavaScript makes it appear when the game is over and it display the result and the winner, if there is one.  This div contains the restart button which only display when the game is over-->
   <div id="game-messages" class="hide">
 
-    <!-- this div shows the resultText determined by JavaScript-->
+    <!-- this div shows the resultText determined by JavaScript.-->  
+    <!-- Placed a period in h2 to fix W3 validation warning, this will be replaced by javascipt generated innerText variable resultText when the h2 is used.-->
     <h2 id="game-result">.</h2>
 
     <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
-    <button id="restart-button">Restart!</button>
+    <button id="restart-button" alt="Restart-Game">Restart!</button>
   </div>
 </body>
 
