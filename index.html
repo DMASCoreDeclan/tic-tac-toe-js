@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Adds a google font Permanent Marker for the Xs and Os placed in the cells of the grid -->
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap;cursive" rel="stylesheet">
-    <title>tic-tac-toe-js</title>
-    
-    <!-- Link to favicon for <title> Element-->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
-    
-    <!-- Link to CSS-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Link to JavaScrip using defer to prevent the script from loading until HTML Elements are loaded-->
-    <script src="assets/js/script.js" defer></script>    
-  </head>
-  <body>
-    <!-- While all of the code used in this file has been typed by the author, it is heavily influenced by a hybrid of designs from the following developers:
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Adds a google font Permanent Marker for the Xs and Os placed in the cells of the grid -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap;cursive"
+    rel="stylesheet">
+  <title>tic-tac-toe-js</title>
+
+  <!-- Link to favicon for <title> Element-->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+
+  <!-- Link to CSS-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Link to JavaScrip using defer to prevent the script from loading until HTML Elements are loaded-->
+  <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- While all of the code used in this file has been typed by the author, it is heavily influenced by a hybrid of designs from the following developers:
     Kyle from Web Dev Simplified using https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s - index.html.old and script.js.old
     Ania Kubów from https://youtu.be/DRaWr0Dcbl0 - index.html.old and script.js.old
     Bro Code from https://youtu.be/AnmwHjpEhtA 
@@ -28,37 +32,38 @@
     Adam Khoury from https://www.youtube.com/watch?v=hsSXzdn_0Gg - how to toggleMute in JS
     While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional features such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodingWithAdam channel, but were renamed before upload and are called by different names in JS.
     The Favicon comes from https://icon-icons.com/icon/tic-tac-toe/39453 but was resized, renamed and recolored before being uploaded.-->
-    
-    <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
-    <h1 class="center">Tic Tac Toe</h1>
-    <div>
-      <button id="mute-button"></button>
-    </div>
-    
-    <!-- 3x3 grid for the gameBoard -->
-    <div class="gameBoard" id="board">
-      <div data-cell-index="1" class="cell right-border bottom-border"></div>
-      <div data-cell-index="2" class="cell right-border bottom-border"></div>
-      <div data-cell-index="3" class="cell bottom-border"></div>
-      <div data-cell-index="4" class="cell right-border bottom-border "></div>
-      <div data-cell-index="5" class="cell right-border bottom-border"></div>
-      <div data-cell-index="6" class="cell bottom-border"></div>
-      <div data-cell-index="7" class="cell right-border "></div>
-      <div data-cell-index="8" class="cell right-border "></div>
-      <div data-cell-index="9" class="cell"></div>
-      
-      <!-- this div is a placeholder to add approprite strkethroughs calculated by JavaScript denoting which line resulted in a win-->
-      <div class="strike" id="strike"></div>
-    </div>
-    
-    <!-- this div is hidden by default.  JavaScript makes it appear when the game is over and it display the result and the winner, if there is one.  This div contains the restart button which only display when the game is over-->
-    <div id="game-messages" class="hide">
-      
-      <!-- this div shows the resultText determined by JavaScript-->
-      <h2 id="game-result"></h2>
-      
-      <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
-      <button id="restart-button">Restart!</button>
-    </div>
-  </body>
+
+  <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
+  <h1 class="center">Tic Tac Toe</h1>
+  <div>
+    <button id="mute-button"></button>
+  </div>
+
+  <!-- 3x3 grid for the gameBoard -->
+  <div class="gameBoard" id="board">
+    <div data-cell-index="1" class="cell right-border bottom-border"></div>
+    <div data-cell-index="2" class="cell right-border bottom-border"></div>
+    <div data-cell-index="3" class="cell bottom-border"></div>
+    <div data-cell-index="4" class="cell right-border bottom-border "></div>
+    <div data-cell-index="5" class="cell right-border bottom-border"></div>
+    <div data-cell-index="6" class="cell bottom-border"></div>
+    <div data-cell-index="7" class="cell right-border "></div>
+    <div data-cell-index="8" class="cell right-border "></div>
+    <div data-cell-index="9" class="cell"></div>
+
+    <!-- this div is a placeholder to add approprite strkethroughs calculated by JavaScript denoting which line resulted in a win-->
+    <div class="strike" id="strike"></div>
+  </div>
+
+  <!-- this div is hidden by default.  JavaScript makes it appear when the game is over and it display the result and the winner, if there is one.  This div contains the restart button which only display when the game is over-->
+  <div id="game-messages" class="hide">
+
+    <!-- this div shows the resultText determined by JavaScript-->
+    <h2 id="game-result">.</h2>
+
+    <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
+    <button id="restart-button">Restart!</button>
+  </div>
+</body>
+
 </html>
