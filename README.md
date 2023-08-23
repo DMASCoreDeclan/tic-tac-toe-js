@@ -1,13 +1,13 @@
 ![TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
 # Tic Tac Toe
 
-This application is a simple game of Tic Tac Toe.  The application loads with the sound muted and has an unmute button to toggle the sound Off/On.  The sounds are played when a user places an X or an O in a cell on the gameBoard.  The sound is muted on initial load.
+This application is a simple game of Tic Tac Toe.  The application loads with the sound muted and has an unmute button to toggle the sound On/Off.  The sounds are played when a user places an X or an O in a cell on the gameBoard and when the game is over.  The sound is muted on initial load.
 
 An empty gameBoard is presented with 9 cells in a 3 x 3 grid.  The cursor becomes a pointer when placed over the Mute/Unmute button, the cells in the grid and the restart button when it is presented.  X always goes first.  When X places his mark, the turn is switched to O.
 
 In order to indicate whose turn it is, the user is presented with an X or an O when they hover over an empty cell.  If the cell is occupied, the hover is deactivated.  When the application is loaded, it initialises with X being the first player and thus, an X hovers over all 9 cells until X places their mark. 
 
-On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the square you'd like to select, but the mark is not placed unles you press the cell briefly.  
+On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the cell you'd like to select, but the mark is not placed unles you press a cell briefly.  
 
 The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
@@ -26,27 +26,20 @@ The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github
 - To allow users to contribute their suggested yoga poses and sign up to the Mind Yoga Newsletter. 
 
 ## User Stories
-- ### First time user
-  - As a first time user I want to understand the main purpose of the site and learn about the benefits of yoga for my mental health.
-  - As a first time user I want to be able to intuitively navigate the website and have a positive emotional experience. 
-  - As a first time user I want to be able to browse yoga content without having to sign-up / register.
-
-- ### Returning User
-  - As a returning user I want to easily navigate to a yoga pose which matches my emotional state.  
-  - As a returning user I want to find step by step instructions in order to complete the pose and to read about the emotional benefits.
-  - As a returning user I want to be able to find yoga studios in my locality to further my practice.
-
-- ### Frequent User
-  - As a frequent user I want to be able to sign-up to the Mind Yoga newsletter in order to get updates about new poses added to the website.
-  - As a frequent user I want to be able to contribute my suggested yoga poses to further benefit other users.
+- ### First time user / Returning User / Frequent User
+  - The application is simple, its a game of Tic Tac Toe between two players.  It never progresses betond that.  
 
 ## Design
+Its designed to be intuitive to figure out, thereby no insctructions are given.  The only barrier to playing the game is, if you don't know how to play TicTacToe!
 
 ### Imagery
-There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate withing the realms of the app.  Within the page boundaries, visual clues are given on what you can/should do or a popu appears with clear instructions on your next possible options.  
+There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate withing the realms of the app.  Within the page boundaries, visual clues are given on what you can/should do or a popup appears with concise instructions on your next possible options.  
 
 ### Colours
-The colour scheme of the website are Black, white and green with varying shades of green used for the hover effect.  
+The colour scheme of the website are black, white and green with varying shades of green used for the hover effect.  
+[WebAIM Contrast Checker Result 1](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=FBFAF8)  
+[WebAIM Contrast Checker Result 2](https://webaim.org/resources/contrastchecker/?fcolor=79A749&bcolor=000000)
+
 
 
 ### Fonts
@@ -70,58 +63,19 @@ Wireframes were produced using Balsamiq.
 
 
 ## Features
-- ### Navigation
+- This is a single page application of Tic Tac Toe.  X always goes first.  The application loads with the sound muted and has an unmute button to toggle the sound On/Off.  The sounds are played when a user places an X or an O in a cell on the gameBoard and when the game is over.  The sound is muted on initial load.
 
-    - The fully responsive navigation bar includes links to the Logo, Home, About, Poses, Practice and Contribute sections of the same page.
-    - The Poses navigation link includes a drop down menu which includes further links to each emotional state within the Poses section.
-    - The navigation bar has a fixed position so that it remains visible at the top of the page as the user navigates through the individual sections. 
-    - A drop shadow was applied to the navigation bar to make sure that it doesn't blend into the other sections of the page upon scrolling.
-    - This section allows the user to easily navigate through the site to find content without having to scroll back up to the top of the page or use the browser back button.
+An empty gameBoard is presented with 9 cells in a 3 x 3 grid.  The cursor becomes a pointer when placed over the Mute/Unmute button, the cells in the grid and the restart button when it is presented.  X always goes first.  When X places his mark, the turn is switched to O.
 
-![Nav bar image](docs/readme_images/nav-bar.png)
+In order to indicate whose turn it is, the user is presented with an X or an O when they hover over an empty cell.  If the cell is occupied, the hover is deactivated.  When the application is loaded, it initialises with X being the first player and thus, an X hovers over all 9 cells until X places their mark. 
 
-- ### The Landing Page Image
-    - The landing page includes an eye-catching image with a text overlay describing the site's goal.
-    - This section provides the user with a clear visual representation of the purpose of the site.
-
-![Landing page image](docs/readme_images/landing-page.png) 
-
-- ### About Section
-    - The About Section gives a brief description of the benefits of yoga for mental wellbeing and also gives further details about what the site offers to users.
-    - Below the About text there are four small images with navigation links to each emotional state within the Poses Section.
-    - This section will show users the value of practicing yoga for their mental wellbeing and the image links invite the user to further explore the site as an alternative to the navigation bar. 
-
-![About section image](docs/readme_images/about-section.png)
-
-- ### Poses Section
-    - This section contains four yoga poses with each pose linked to a different difficult emotion. 
-    - This section is valuable as the user is provided with step by step instructions as to how to complete each pose along with a demonstrative image and a description of the emotional benefits. 
-
-![Poses section image](docs/readme_images/poses-section.png)
-  
-
-- ### Practice Section
-    - The Practice Section includes an iframe with an embedded Google Map showing the locations of yoga studios around Dublin.
-    - This section will enable the user to find a yoga studio within their locality should they wish to attend a class.
-
-![Maps section image](docs/readme_images/maps-section.png)
-
-- ### Contribute Section
-    - The contribute section includes a background video of ocean waves with a form overlay.
-    - The user is invited to sign up to Mind Yoga and contribute their suggested Yoga pose. They can also opt in to receive the Mind Yoga Newsletter by selecting the checkbox provided.
-
-![Form section image](docs/readme_images/form-section.png) 
-
-- ### Footer
-    - The footer section includes links to Mind Yoga's Facebook, Instagram, Twitter and Youtube pages.
-    - The links will open to a new tab to allow easy navigation for the user. 
-    - The footer is valuable to the user as it allows them to find and follow Mind Yoga on social media
-
-![Footer image](docs/readme_images/footer.png)
+On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the cell you'd like to select, but the mark is not placed unles you press a cell briefly.  
 
 ### Features Left to Implement
-- Burger button for the mobile nav bar.
-- The ability to search by emotion as the bank of poses grows.
+- Perhaps a link to ![Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe) when you click on the h1.
+- In addition to the hover effect indicating who the current player is, perhaps some text also appearing.
+- Include inputs at the outset to indicate the name of Player 1 (X) and Player 2 (O).
+- Make it a one player game, playing against the computer.
 
 ## Testing
 
@@ -134,14 +88,21 @@ Wireframes were produced using Balsamiq.
     - No errors were found when passing through the official W3C CSS Validator 
         - [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - #### Accessibility 
-    - The site achieved a Lighthouse accessibility score of 100% which confirms that the colours and fonts chosen are easy to read and accessible
+    - The site achieved a Lighthouse accessibility score of 100% which confirms that the colours and fonts chosen are easy to read and accessible 
 
-![Lighthouse score](docs/readme_images/lighthouse_testing.png)
+    <details>
+    <summary>Lighthouse Result</summary>
 
+    ![Lighthouse Score](.devcontainer\docs\images\lighthouse-score.png)
+    </details>
 
-### Form Testing
-- The form has been tested to ensure it would not submit without the required input fields being filled in (full name and email address).
+- #### Jshint 
+    <details>
+    <summary>Jshint Result</summary>
 
+    ![Lighthouse Score](.devcontainer\docs\images\jshint-result.png)
+    </details>
+ 
 ### Links Testing
 - All navigation links were tested manually to ensure the user is directed to the correct section of the website.
 - Social Media links in the footer of each page were tested manually to ensure they direct the user to the correct page and open in a new tab. 
@@ -150,9 +111,9 @@ Wireframes were produced using Balsamiq.
 - The Website was tested on Google Chrome, Firefox, Microsoft Edge, Safari browsers with no issues noted.
     
 ### Device Testing
-- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, , iphone 11, iPad, and Androids to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
+- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, iPhone 11, iPad, and Androids to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
 - I also used the following websites to test responsiveness:
-    - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Faliokeeffe.github.io%2Fmindyoga%2F)
+    - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
     - [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
 
 https://dmascoredeclan.github.io/tic-tac-toe-js/
@@ -161,18 +122,17 @@ https://dmascoredeclan.github.io/tic-tac-toe-js/
 Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues. They tested on a variety of iPhones and Android devices.  The :hover::after css works but only if you know that you need to touch the screen for a milisecond longer than normal!
 
 ### Fixed Bugs
-#### Anchor link scroll with a fixed position header
-- The header element contains anchor links to allow the user to navigate to different sections within the website. By default, these will scroll so that the target element is flush with the top of the browser window.
-- When I updated the header to use a fixed top position, the beginning of each section ended up being covered by the header, which wasn’t ideal.
-- To resolve this I created div elements at the top of each section and applied a relative position with a -75px top position (the same height as the header). This way, when the user clicks on a nav link, the browser window scrolls to the top of the corresponding section. 
+#### Mute/Unmute image did not appear in the browser, despite the button element showing up
+- I was using the incorrect path and it took a long to to figure out but was fixed by changing the path to the images file by including "../" in the path.
 
-#### Using padding on elements with 100% width / CSS Box Model
-- When I first implemented my section elements I set them to use a width of 100%. When I later added content to some of these, I applied padding to create more space for the text and images. 
-- I did not expect the padding to be added to the width of the content box of the Section and didn’t understand why the Sections with added padding rendered at a different size to those that did not. 
-- I read up a bit more about the CSS Box Model and then implemented a new Div element with no defined width inside of the relevant Section elements, on which I was able to apply the required padding, while ensuring that the width of 100% was applied to all Section elements consistently.
+#### game does not look well on small devices when in landscape:
+
+[Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website)
 
 ### Known Bugs
-HTML Smooth Scroll does not work on Safari browser.
+-Touch screen devices make the etire div shimmer befoore displaying the hover effects.
+-The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
+
 
 ## Technologies Used
 
@@ -220,14 +180,11 @@ Mute/Unmute pngs which were recolored, renamed, restyled
 ### Resources Used
 
  - While all of the code used in this file has been typed by the author, the final design is a hybrid of designs from the following developers:
- - [Kyle from Web Dev Simplified](https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s)
- -- index.html.old and script.js.old
- - [Ania Kubów](https://youtu.be/DRaWr0Dcbl0)
- -- index.html.old and script.js.old
+ - [Kyle from Web Dev Simplified](https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s) - index.html.old and script.js.old
+ - [Ania Kubów](https://youtu.be/DRaWr0Dcbl0) - index.html.old and script.js.old
  - [Bro Code](https://youtu.be/AnmwHjpEhtA)
  - [Coding with Adam from](https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s)
- - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg)
- -- how to toggleMute in JS
+ - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg) - how to toggleMute in JS
  - While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
     
 

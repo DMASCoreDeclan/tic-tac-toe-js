@@ -26,8 +26,8 @@ const gameResult = document.getElementById('game-result');
 const restartButton = document.getElementById('restart-button');
 
 //Get sound placeholders
-const clickSound = new Audio('assets/sounds/clickSound.wav');
-const gameOverSound = new Audio('assets/sounds/gameOverSound.wav');
+const clickSound = new Audio('assets/sounds/click-sound.wav');
+const gameOverSound = new Audio('assets/sounds/game-over-sound.wav');
 const muteButton = document.getElementById('mute-button');
 
 //Array containing Objects to determine if the last click produced a winner and if it did, apply a css strikeClass to the .gameBoard to the winning moves
