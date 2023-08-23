@@ -9,11 +9,6 @@ In order to indicate whose turn it is, the user is presented with an X or an O w
 
 On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the square you'd like to select, but the mark is not placed unles you press the cell briefly.  
 
-
-TEST TO SEE if working with VS CODE Locally works
-
-
-
 The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
 ![Mind Yoga Am I Responsive Image](docs/readme_images/am-i-responsive.png)

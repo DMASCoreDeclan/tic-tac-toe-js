@@ -1,3 +1,12 @@
+/* While all of the code used in this file has been typed by the author, it is heavily influenced by a hybrid of designs from the following developers:
+    Kyle from Web Dev Simplified using https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s - index.html.old and script.js.old
+    Ania Kubów from https://youtu.be/DRaWr0Dcbl0 - index.html.old and script.js.old
+    Bro Code from https://youtu.be/AnmwHjpEhtA 
+    Coding with Adam from https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s
+    Adam Khoury from https://www.youtube.com/watch?v=hsSXzdn_0Gg - how to toggleMute in JS
+    While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
+    The Favicon comes from https://icon-icons.com/icon/tic-tac-toe/39453 but was resized, renamed and recolored before being uploaded. */
+
 /* Document default properties */
 body {
     display: flex;
@@ -14,7 +23,6 @@ h1 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
 
 /* Create a 3 x 100px by 3 x 100 px grid gameBoard with a style of Permanent MArker */
 .gameBoard {
@@ -150,7 +158,7 @@ h2 {
     opacity: 0.4;
 }
 
-/* Javascript applies this class when it is Ys turn and it hovers over an empty cell */
+/* Javascript applies this class when it is Os turn and it hovers over an empty cell */
 .o-hover:hover::after {
     content: "O";
     opacity: 0.4;
@@ -165,6 +173,7 @@ button#unmute-button {
     color: black;
 }
 
+/* mute image applied to sound button when the sound is muted */
 #mute-button {
     background: no-repeat url("../images/mute.png");
     height: 50px;
@@ -172,6 +181,7 @@ button#unmute-button {
     cursor: pointer;
 }
 
+/* unmute image applied to sound button when the sound is unmuted */
 #unmute-button {
     background: no-repeat url("../images/unmute.png");
     height: 50px;

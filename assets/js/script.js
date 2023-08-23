@@ -1,3 +1,12 @@
+/* While all of the code used in this file has been typed by the author, it is heavily influenced by a hybrid of designs from the following developers:
+    Kyle from Web Dev Simplified using https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s - index.html.old and script.js.old
+    Ania Kubów from https://youtu.be/DRaWr0Dcbl0 - index.html.old and script.js.old
+    Bro Code from https://youtu.be/AnmwHjpEhtA 
+    Coding with Adam from https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s
+    Adam Khoury from https://www.youtube.com/watch?v=hsSXzdn_0Gg - how to toggleMute in JS
+    While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
+    The Favicon comes from https://icon-icons.com/icon/tic-tac-toe/39453 but was resized, renamed and recolored before being uploaded. */
+
 /*jshint esversion: 6 */
 
 //Define constants for every Game
@@ -34,7 +43,6 @@ const winningPossibilities = [
     //Diagonals
     { combination: [2, 4, 6], strikeClass: "strike-diagonal-1" },
     { combination: [0, 4, 8], strikeClass: "strike-diagonal-2" }
-
 ];
 
 //Add an Event Listener to each cell and determine what to do when a cell is clicked
@@ -128,6 +136,7 @@ function gameOver(cellContents1) {
     //Show the gameMessage div and the gameResult
     gameMessages.className = "show";
     gameResult.innerText = resultText;
+    
     //Play sound when the game is Over
     playGameOverSound();
 }
