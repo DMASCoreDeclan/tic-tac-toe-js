@@ -127,7 +127,7 @@ Friends and family members were asked to review the site and documentation to po
 
 #### game does not look well on small devices when in landscape:
 
-[Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website)
+[Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website) - this didn't work!
 
 ### Known Bugs
 -Touch screen devices make the etire div shimmer befoore displaying the hover effects.
@@ -185,6 +185,8 @@ Mute/Unmute pngs which were recolored, renamed, restyled
  - [Bro Code](https://youtu.be/AnmwHjpEhtA)
  - [Coding with Adam from](https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s)
  - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg) - how to toggleMute in JS
+ - [CSS-Tricks](https://css-tricks.com/snippets/css/orientation-lock/) - to prevent the screen rotating from portrait to landscape 
+
  - While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
     
 
