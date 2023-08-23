@@ -4,8 +4,8 @@
     Bro Code from https://youtu.be/AnmwHjpEhtA 
     Coding with Adam from https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s
     Adam Khoury from https://www.youtube.com/watch?v=hsSXzdn_0Gg - how to toggleMute in JS
-    While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
-    The Favicon comes from https://icon-icons.com/icon/tic-tac-toe/39453 but was resized, renamed and recolored before being uploaded. */
+    While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional features such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodingWithAdam channel, but were renamed before upload and are called by different names in JS.
+    The Favicon comes from https://icon-icons.com/icon/tic-tac-toe/39453 but was resized, renamed and recolored before being uploaded.*/
 
 /*jshint esversion: 6 */
 

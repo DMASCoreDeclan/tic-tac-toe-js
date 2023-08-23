@@ -11,7 +11,12 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
 
 The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
-![Tic Tac Toe - Am I Responsive Image](docs/readme_images/am-i-responsive.png)
+ <details>
+
+ <summary>Am I Responsive Images</summary>
+
+![Tic Tac Toe - Am I Responsive Image](.devcontainer/docs/images/AmIResponsiveResults.png)
+ </details>
 
 ## Site Owner Goals 
 - To provide the user with information about the benefits of yoga, with a particular focus on mental wellbeing. 
@@ -38,13 +43,14 @@ The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github
 ## Design
 
 ### Imagery
-The imagery used on the Mind Yoga site is very important to the overall experience of the user. A nature theme is consistently used across all imagery with lots of green foliage and forest scenes. This gives the sense of grounding in nature which has great benefits for mental health and is intended to invoke a sense of calm in the user. The colour green is also important as this ties into the main colour scheme of the site. 
+There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate withing the realms of the app.  Within the page boundaries, visual clues are given on what you can/should do or a popu appears with clear instructions on your next possible options.  
 
 ### Colours
-The colour scheme of the website is white and green with varying shades of green used to tie in with the nature imagery. A dark grey font is used which has a good contrast with the light green and white backgrounds making it easy to read. 
+The colour scheme of the website are Black, white and green with varying shades of green used for the hover effect.  
+
 
 ### Fonts
-The Montserrat font is the main font used throughout the whole website. This font was imported via [Google Fonts](https://fonts.google.com/). I'm using Sans Serif as a backup font, in case for any reason the main font isn't being imported into the site correctly.
+The "Permanent Marker" font is the main font used for the mark of X or O.  This font was imported via [Google Fonts](https://fonts.google.com/). I'm used Cursive as a backup font, in case for any reason the main font isn't being imported into the site correctly.
 
 ## Wireframes
 Wireframes were produced using Balsamiq. 
@@ -179,11 +185,10 @@ HTML Smooth Scroll does not work on Safari browser.
 - [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
 - [Balsamiq](https://balsamiq.com/) - Used to generate Wireframe images.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
-- [Font Awesome](https://fontawesome.com/) - Used for Social Media icons in footer.
 - [GitHub](https://github.com/) - Used for version control and hosting.
+- [MyGitHub](https://github.com/DMASCoreDeclan/tic-tac-toe-js) - Used for version control and hosting of this project.
 - [Google Fonts](https://fonts.google.com/) - Used to import and alter fonts on the page.
-- [TinyPNG](https://tinypng.com/) - Used to compress images to reduce file size without a reduction in quality.
-- [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
+- [W3C](https://validator.w3.org/) - Used for HTML & CSS Validation.
 
 
 ## Deployment
