@@ -195,7 +195,7 @@ such as a finger on a touchscreen. */
 @media (pointer: coarse) {}
 
 /* h1, h2, padding, margin and font-size changes @ 328px */
-@media only screen and (max-width: 328px) {
+@media only screen and (max-width: 379px) {
     h1, h2 {
         font-size: 2.5rem;
         color: currentColor;
