@@ -1,4 +1,4 @@
-![TicTacToe Logo](assets/images/tic-tac-toe-white-100px.png)
+![TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
 # Tic Tac Toe
 
 This application is a simple game of Tic Tac Toe.  The application loads with the sound muted and has an unmute button to toggle the sound Off/On.  The sounds are played when a user places an X or an O in a cell on the gameBoard.  The sound is muted on initial load.
@@ -11,7 +11,7 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
 
 The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
-![Mind Yoga Am I Responsive Image](docs/readme_images/am-i-responsive.png)
+![Tic Tac Toe - Am I Responsive Image](docs/readme_images/am-i-responsive.png)
 
 ## Site Owner Goals 
 - To provide the user with information about the benefits of yoga, with a particular focus on mental wellbeing. 
@@ -143,14 +143,15 @@ Wireframes were produced using Balsamiq.
 - The Website was tested on Google Chrome, Firefox, Microsoft Edge, Safari browsers with no issues noted.
     
 ### Device Testing
-- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, iPhoneX and iPad to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
+- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, , iphone 11, iPad, and Androids to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
 - I also used the following websites to test responsiveness:
     - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Faliokeeffe.github.io%2Fmindyoga%2F)
-    - [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Faliokeeffe.github.io%2Fmindyoga%2F)
+    - [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
 
+https://dmascoredeclan.github.io/tic-tac-toe-js/
 
 ### Friends and Family User Testing
-Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues. They tested on a variety of iPhones and Android devices.  The :hover::after css works but only if you know that you need to touch the screen for a milisecond longer than normal!
 
 ### Fixed Bugs
 #### Anchor link scroll with a fixed position header
@@ -171,6 +172,7 @@ HTML Smooth Scroll does not work on Safari browser.
 ### Languages
 - HTML5
 - CSS
+- JS (ES6)
 
 ### Frameworks - Libraries - Programs Used
 - [Am I Responsive](http://ami.responsivedesign.is/) - Used to verify responsiveness of website on different devices.
@@ -187,7 +189,6 @@ HTML Smooth Scroll does not work on Safari browser.
 ## Deployment
 
 The project was deployed using GitHub pages. The steps to deploy using GitHub pages are:
-
 1. Go to the repository on GitHub.com
 2. Select 'Settings' near the top of the page.
 3. Select 'Pages' from the menu bar on the left of the page.
@@ -195,38 +196,34 @@ The project was deployed using GitHub pages. The steps to deploy using GitHub pa
 5. Once selected, click the 'Save'.
 6. Deployment should be confirmed by a message on a green background saying "Your site is published at" followed by the web address.
 
-The live link can be found here - [Mind Yoga](https://aliokeeffe.github.io/mindyoga/)
+The live link can be found here - [Tic Tac Toe](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
 ## Credits
 
-### Content
-All educational yoga content was sourced from the below websites:
-- [Yoga Journal](https://www.yogajournal.com)
-- [Amayaan](https://www.amayaan.com/)
-- [Ekhart Yoga](https://www.ekhartyoga.com)
-- [Mind Body Green](https://www.mindbodygreen.com)
-- [Class Pass](https://classpass.com)
-- [Art of Living](https://www.artofliving.org)
-
 ### Media
-All images and videos were sourced from the below websites with thanks to the below amazing photographers/videographers
-- [Pexels](https://www.pexels.com/)
-    - Enrrique Hoyos - Waves Video
-    - Anete Lusina - Tree Pose Image
-    - Daria Klimova - Standing Forward Fold Pose Image
-- [Unsplash](https://unsplash.com)
-    - Mikita Karasiou - Hero Image
-    - Tabitha Turner - Upward Facing Dog Pose Image
-    - Balu Gáspár - Childs Pose Image
-    - Tima Miroshnichenko - Yoga Silhouette
-- [PXhere](https://pxhere.com/)
-    - Mohamad Hassan - Yoga Silhouette
-    - Dave Contreras - Yoga Silhouette
+
+- [TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
+ -- (https://icon-icons.com/icon/tic-tac-toe/39453)
+
+- [ICONFINDER](https://www.iconfinder.com/)
+Mute/Unmute pngs which were recolored, renamed, restyled
+ -- (https://www.iconfinder.com/icons/4593140/audio_max_sound_speaker_volume_icon)
+ -- (https://www.iconfinder.com/icons/4593142/audio_mute_sound_speaker_volume_icon)
+
 
 ### Resources Used
 
-- Inspiration for dropdown nav bar - [W3Schools](https://www.w3schools.com/)
-- [Stack Overflow](https://stackoverflow.com/)
+ - While all of the code used in this file has been typed by the author, the final design is a hybrid of designs from the following developers:
+ - [Kyle from Web Dev Simplified](https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s)
+ -- index.html.old and script.js.old
+ - [Ania Kubów](https://youtu.be/DRaWr0Dcbl0)
+ -- index.html.old and script.js.old
+ - [Bro Code](https://youtu.be/AnmwHjpEhtA)
+ - [Coding with Adam from](https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s)
+ - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg)
+ -- how to toggleMute in JS
+ - While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
+    
 
 ## Acknowledgments
 My mentor Antonio for his support and advice.
