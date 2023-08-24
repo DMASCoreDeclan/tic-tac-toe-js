@@ -14,6 +14,7 @@ const cells = document.querySelectorAll('.cell');
 const player_x = "X";
 const player_o = "O";
 let turn = player_x;
+let showModal = true;
 
 // Create the Board Array to keep track of where players place their O's ans O's
 const gameBoard = Array(cells.length);
@@ -24,6 +25,8 @@ const strike = document.getElementById('strike');
 const gameMessages = document.getElementById('game-messages');
 const gameResult = document.getElementById('game-result');
 const restartButton = document.getElementById('restart-button');
+const modal = document.getElementById('modal');
+
 
 //Get sound placeholders
 const clickSound = new Audio('assets/sounds/click-sound.wav');
@@ -184,3 +187,20 @@ function playGameOverSound() {
     gameOverSound.volume = 0.05;
     gameOverSound.play();
 }
+
+// toggleInstructions on initial load, show instructions modal and toggle the css show/hide from a button 
+function toggleInstructions(){
+    if (showModal === true){
+        modal.classList.remove('hide');
+    }
+    else{
+        modal.classList.add('hide');
+    }
+    showModal = !showModal;
+}
+
+document.getElementById('close-modal').addEventListener('click', toggleInstructions);
+document.getElementById('open-modal').addEventListener('click', toggleInstructions);
+
+
+toggleInstructions();

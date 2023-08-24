@@ -21,7 +21,12 @@ h1 {
     font-size: 4rem;
     color: currentColor;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Create a 3 x 100px by 3 x 100 px grid gameBoard with a style of Permanent MArker */
@@ -165,28 +170,46 @@ h2 {
 }
 
 /* gameOverSound and clickSound buttons.  Controled by JavaScript mute function.  */
-button#mute-button,
-button#unmute-button {
+button#mute-button, 
+button#unmute-button,
+button#open-modal {
     border-style: none;
     cursor: pointer;
     outline: white;
     color: black;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
 }
 
 /* mute image applied to sound button when the sound is muted */
 #mute-button {
-    background: no-repeat url("../images/mute.png");
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
+    background: no-repeat url("../images/mute.png");  
 }
 
 /* unmute image applied to sound button when the sound is unmuted */
 #unmute-button {
     background: no-repeat url("../images/unmute.png");
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
+}
+
+#open-modal {
+    background: no-repeat url("../images/instructions-50px.png");
+}
+
+/* Modal */
+/* Javascrip uses this h2 for resultText messages indicating if its a Win or a Draw */
+#modal {
+    position: absolute;
+    z-index: 10000;
+    background: rgba(255,255,255,0.89);
+    width: 60%;
+    color: black;
+    margin-top: 100px;
+    text-align: center;
+    
 }
 
 /* Media Queries */

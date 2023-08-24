@@ -36,9 +36,13 @@
 
   <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
   <h1 class="center">Tic Tac Toe</h1>
-  <div>
-    <button id="mute-button" alt="Sound Toggle to mute or unmute the sound" aria-label="Sound Toggle to mute or unmute the sound.  The default is that the sound is muted" title="Toggle between Muteand Unmute"></button>
+  <div class="header">
+    <button id="mute-button" alt="Sound Toggle to mute or unmute the sound" aria-label="Sound Toggle to mute or unmute the sound.  The default is that the sound is muted" title="Mute/Unmute"></button>
+    <!-- Displays the instructions -->
+    <button id="open-modal" alt="Instruction Toggle to show the instructions" aria-label="Instruction Toggle to show the instructions" title="Show Instructions"></button>
   </div>
+
+  
 
   <!-- 3x3 grid for the gameBoard -->
   <div class="gameBoard" id="board">
@@ -64,7 +68,19 @@
     <h2 id="game-result">.</h2>
 
     <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
-    <button id="restart-button" title="Restart Button" alt="Restart Button" aria-label="This button restarts the game.">Restart!</button>
+    <button id="restart-button" title="Restart Game" alt="Restart Button" aria-label="This button restarts the game.">Restart!</button>
+  </div>
+
+  <!-- this div shows the Instructions on initial load of the page.--> 
+  <div id="modal" class="hide">
+    <h3> Instructions</h3>
+    <p> Instructions 1</p>
+    <p> Instructions 1</p>
+    <p> Instructions 1</p>
+    <p> Instructions 1</p>
+    <p> Instructions 1</p>
+
+    <button id="close-modal">Close</button>
   </div>
 </body>
 
