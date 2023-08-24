@@ -172,7 +172,8 @@ h2 {
 /* gameOverSound and clickSound buttons.  Controled by JavaScript mute function.  */
 button#mute-button, 
 button#unmute-button,
-button#open-modal {
+button#open-modal, 
+button#close-modal {
     border-style: none;
     cursor: pointer;
     outline: white;
@@ -195,21 +196,44 @@ button#open-modal {
     background: no-repeat url("../images/unmute.png");
 }
 
-#open-modal {
-    background: no-repeat url("../images/instructions-50px.png");
-}
+
 
 /* Modal */
 /* Javascrip uses this h2 for resultText messages indicating if its a Win or a Draw */
 #modal {
+    font-family: permanent marker, cursive;
     position: absolute;
     z-index: 10000;
-    background: rgba(255,255,255,0.89);
-    width: 60%;
-    color: black;
+    background: black;
+    width: 100%;
+    height: 100%;
+    color: currentColor;
     margin-top: 100px;
     text-align: center;
-    
+    padding: 15px;
+    margin-top: -10px;
+    opacity: .9;
+}
+
+#open-modal {
+    background: no-repeat url("../images/instructions-50px.png");
+}
+
+#close-modal {
+    background: no-repeat url("../images/close-button-50px.png");
+}
+
+.instructions {
+    font-size: large;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+a {
+    color: #79A749;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
 }
 
 /* Media Queries */
