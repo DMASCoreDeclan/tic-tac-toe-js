@@ -34,12 +34,10 @@
   <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
   <h1 class="center">Tic Tac Toe</h1>
   <div class="header">
-    <button id="mute-button" alt="Sound Toggle to mute or unmute the sound"
-      aria-label="Sound Toggle to mute or unmute the sound.  The default is that the sound is muted"
+    <button id="mute-button" aria-label="Sound Toggle to mute or unmute the sound.  The default is that the sound is muted"
       title="Mute/Unmute"></button>
     <!-- Displays the instructions -->
-    <button id="open-modal" alt="Instruction Toggle to show the instructions"
-      aria-label="Instruction Toggle to show the instructions" title="Show Instructions"></button>
+    <button id="open-modal" aria-label="Instruction Toggle to show the instructions" title="Show Instructions"></button>
   </div>
 
 
@@ -68,24 +66,24 @@
     <h2 id="game-result">.</h2>
 
     <!-- when visible, this button resets the gameboard, game-messages and hoverEffects determined by Javascript-->
-    <button id="restart-button" title="Restart Game" alt="Restart Button"
-      aria-label="This button restarts the game.">Restart!</button>
-  </div>
+    <button id="restart-button" title="Restart Game" aria-label="This button restarts the game.">Restart!</button>
+  </div
 
   <!-- this div shows the Instructions on initial load of the page.-->
   <div id="modal" class="hide">
     <h3> Tic Tac Toe Instructions</h3>
+    <p class="instructions">Press <span> <img src="assets/images/mute-20px.png" alt="image of unmute icon" aria-label="image of unmute icon" > </span> to toggle the sound from mute to unmute.</p>
+    <p class="instructions">Press <span> <img src="assets/images/instructions-20px.png " alt="image of instruction icon" aria-label="image of instruction icon" > </span> to show the instructions.  </p>
     <p class="instructions">Tic Tac Toe or, Xs and Os, is a game for two players who take turns marking the cells in a
       three-by-three grid with an X or an O.</p>
-      <p class="instructions">X always goes first.</p>
+    <p class="instructions">X always goes first.</p>
     <p class="instructions">The player who succeeds in placing three of their marks in a horizontal, vertical, or
       diagonal row is the winner. It is a solved game, with a forced draw assuming best play from both players.</p>
-      <p class="instructions">Press <span> <img src="assets/images/mute-20px.png" alt="image of unmute icon" aria-label="image of unmute icon" > </span> to toggle the sound from mute to unmute.</p>
-      <p class="instructions">Press <span> <img src="assets/images/instructions-20px.png " alt="image of instruction icon" aria-label="image of instruction icon" > </span> to show the instructions.  </p>
+
     <p><a title="Tic Tac Toe Wikipedia link" href="https://en.wikipedia.org/wiki/Tic-tac-toe" target="_blank"
         rel="noopener">Tic Tac Toe Wiki</a></p>
 
-    <button id="close-modal" alt="Close Button" aria-label="This button closes the instructions modal."
+    <button id="close-modal" aria-label="This button closes the instructions modal."
       title="Close"></button>
   </div>
 </body>
