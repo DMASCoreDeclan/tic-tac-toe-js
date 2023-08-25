@@ -63,7 +63,7 @@ function hoverText() {
     //Remove existing hover classes
     cells.forEach((cell) => {
         cell.classList.remove('x-hover');
-        cell.classList.remove('o-hover');
+        cell.classList.remove('o-hover'); 
     });
 
     const hoverClass = `${turn.toLowerCase()}-hover`;
