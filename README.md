@@ -149,13 +149,13 @@ The site achieved a Lighthouse accessibility score of 98% indicating that the co
     ![Lighthouse Score](.devcontainer/docs/images/lighthouse-score.png)
     </details>
 
-#### Jshint 
-   <details>
-   <summary>Jshint Result</summary>
-   ![Lighthouse Score](.devcontainer/docs/images/jshint-result.png)
-   </details>
+#### Jshint
 
-- There is 1 warning: "Expected an assignment or function call and instead saw an expression." - the code works and produces no Warnings or Errors in the DOM Console.
+There is 1 warning: "Expected an assignment or function call and instead saw an expression." - the code works and produces no Warnings or Errors in the DOM Console.
+    <details>
+    <summary>Jshint</summary>
+    ![Jshint Result](.devcontainer/docs/images/jshint-result.png)
+    </details>
 
 ### Links Testing
 - The navigation link was tested manually to ensure the user is directed to the correct external wikipedia site.
