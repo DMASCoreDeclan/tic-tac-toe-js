@@ -38,7 +38,6 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
 # Tic Tac Toe
 
 This game is a fun game for two players to compete against each other.  Player X competes against Player O to get three marks in a row in a 3 x 3 grid.
@@ -135,26 +134,24 @@ Everytime a mark is placed, JS determines if this has resulted in a Win or Draw,
 ## Testing
 
 ### Validator Testing
-- #### HTML 
+#### HTML 
 
 No errors were returned when passing through the official W3C Markup Validator [W3C Validator Results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
         
-- #### CSS
+#### CSS
 
 No errors were returned when passing through the official W3C CSS Validator [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-- #### Accessibility
+#### Accessibility
 
-The site achieved a Lighthouse accessibility score of 98% indicating that the colours and fonts chosen are easy to read and accessible .  
-
-   <details>
+The site achieved a Lighthouse accessibility score of 98% indicating that the colours and fonts chosen are easy to read and accessible.  
+    <details>
     <summary>Lighthouse Result</summary>
-
     ![Lighthouse Score](.devcontainer/docs/images/lighthouse-score.png)
     </details>
 
-- #### Jshint 
+#### Jshint 
     
-   <details>
+    <details>
     <summary>Jshint Result</summary>
 
     ![Lighthouse Score](.devcontainer/docs/images/jshint-result.png)
