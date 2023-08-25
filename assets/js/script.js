@@ -26,12 +26,13 @@ const gameMessages = document.getElementById('game-messages');
 const gameResult = document.getElementById('game-result');
 const restartButton = document.getElementById('restart-button');
 const modal = document.getElementById('modal');
-
+const closeModal = document.getElementById('close-modal');
+const openModal = document.getElementById('open-modal');
+const muteButton = document.getElementById('mute-button');
 
 //Get sound placeholders
 const clickSound = new Audio('assets/sounds/click-sound.wav');
 const gameOverSound = new Audio('assets/sounds/game-over-sound.wav');
-const muteButton = document.getElementById('mute-button');
 
 //Array containing Objects to determine if the last click produced a winner and if it did, apply a css strikeClass to the .gameBoard to the winning moves
 const winningPossibilities = [
@@ -199,8 +200,8 @@ function toggleInstructions(){
     showModal = !showModal;
 }
 
-document.getElementById('close-modal').addEventListener('click', toggleInstructions);
-document.getElementById('open-modal').addEventListener('click', toggleInstructions);
 
+closeModal.addEventListener('click', toggleInstructions);
+openModal.addEventListener('click', toggleInstructions);
 
 toggleInstructions();

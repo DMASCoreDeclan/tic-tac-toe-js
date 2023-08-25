@@ -130,7 +130,7 @@ Friends and family members were asked to review the site and documentation to po
 [Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website) - this didn't work!
 
 ### Known Bugs
--Touch screen devices make the etire div shimmer befoore displaying the hover effects.
+-Touch screen devices make the etire gameBoard div, shimmer before displaying the hover effects.
 -The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
 
 
