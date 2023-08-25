@@ -25,9 +25,20 @@ h1 {
     margin-bottom: 2px;
 }
 
+h3 {
+    padding: 0px;
+    margin: 0px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
+}
+
+
+#game-score {
+    padding: 15px;
+    /* padding top: 0px; */
 }
 
 /* Create a 3 x 100px by 3 x 100 px grid gameBoard with a style of Permanent MArker */
