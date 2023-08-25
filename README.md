@@ -1,8 +1,99 @@
-![TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
+- [Tic Tac Toe](#tic-tac-toe)
+  * [Site Owner Goals](#site-owner-goals)
+    + [First Time User](#first-time-user)
+    + [Returning user](#returning-user)
+    + [Frequent user](#frequent-user)
+  * [Design](#design)
+    + [Colours](#colours)
+    + [Fonts](#fonts)
+    + [Imagery](#imagery)
+    + [Wireframe](#wireframe)
+    + [Layout](#layout)
+  * [Features](#features)
+  * [Testing](#testing)
+    + [Validator Testing](#validator-testing)
+      - [HTML](#html)
+      - [CSS](#css)
+      - [Accessibility](#accessibility)
+      - [Jshint](#jshint)
+    + [Links Testing](#links-testing)
+    + [Browser Testing](#browser-testing)
+    + [Device Testing](#device-testing)
+    + [Friends and Family User Testing](#friends-and-family-user-testing)
+    + [Fixed Bugs](#fixed-bugs)
+      - [Mute/Unmute image did not appear in the browser, despite the button element showing up](#mute-unmute-image-did-not-appear-in-the-browser--despite-the-button-element-showing-up)
+      - [The Score Area did not work and produced console errors.  On github.io the game never revealed the score, the game never concluded despite being OVER!](#the-score-area-did-not-work-and-produced-console-errors--on-githubio-the-game-never-revealed-the-score--the-game-never-concluded-despite-being-over-)
+    + [Known Bugs](#known-bugs)
+    + [Features Left to Implement](#features-left-to-implement)
+      - [game does not look well on small devices when in landscape:](#game-does-not-look-well-on-small-devices-when-in-landscape-)
+  * [Deployment](#deployment)
+  * [Technologies Used](#technologies-used)
+    + [Languages](#languages)
+    + [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
+  * [Deployment](#deployment-1)
+  * [Credits](#credits)
+    + [Media](#media)
+    + [Resources Used](#resources-used)
+  * [Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 # Tic Tac Toe
 
-## Wireframes
-Wireframes were produced using Paint.net. 
+This game is a fun game for two players to compete against each other.  Player X competes against Player O to get three marks in a row in a 3 x 3 grid.
+
+The application loads with the Instruction being overlayed on a gameBoard.  Once you close the Instructions, an empty gameBoard is presented with 9 cells in a 3 x 3 grid.  
+
+On initial load, the sound is muted and has an unmute button to toggle the sound On/Off.  The sounds are played when a user places an X or an O in a cell on the gameBoard and when the game is over.  
+
+ The cursor becomes a pointer when placed over the Mute/Unmute, Instructions, Restart buttons and the cells in the grid.  
+ 
+ X always goes first.  When X places his mark, the turn is switched to O.
+
+
+## Site Owner Goals
+- To provide the user with an easy to navigate game that is fun to play against an opponent.
+- To present the user with a website that is visually appealing and fully responsive.
+- To present the user with a website that is intuitive and does not need any instructions, despite them being provided.  
+
+###	First Time User
+- As a first time user I want to understand the main purpose of the game.
+- As a first time user I want to be able to intuitively navigate the game, play the game, see my score and restart the game once it ends.
+- As a first time user I want to have fun.
+- As a first time user I want to beat my opponent.
+
+### Returning user
+- As a returning user I want to have fun.
+- As a returning user I want to beat my opponent.
+- As a returning user I want to be able to save my score to the leaderboard.  (not developed).
+
+### Frequent user
+- As a frequent user I want to be able to play against the computer.  (not developed).
+- As a frequent user I want to be able to beat my previous score.  (not developed).
+- As a frequent user I want to be able to play against an opponent who is in another part of the world!  (not developed).
+
+## Design
+Its designed to be intuitive to figure out, using commonplace icons which give clear purpose messages when hovered over. 
+
+
+### Colours
+The colour scheme of the website are black, white and green with lighter shades of green used for the hover effect.  
+[WebAIM Contrast Checker Result 1](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=FBFAF8)  
+[WebAIM Contrast Checker Result 2](https://webaim.org/resources/contrastchecker/?fcolor=79A749&bcolor=000000)
+
+Great care was taken to establish a good contrast between background colours and text at all times to ensure maximum user accessibility. 
+
+### Fonts
+There are two fonts used in the site: "Varela", backed up by sans-serif and "Permanent Marker" backed up by cursive.
+
+"Varela" is used throughout while "Permanent Marker" font is the main font used for the mark of X and O.  These fonts were imported via [Google Fonts](https://fonts.google.com/). 
+
+### Imagery
+There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate withing the realms of the actionable areas of the site.  Within the page boundaries, visual clues are given on what you can/should do, or a popup appears with concise instructions on your next possible options.  
+
+### Wireframe
+The wireframe was produced using Paint.net. 
 
  <details>
 
@@ -11,82 +102,49 @@ Wireframes were produced using Paint.net.
 ![Wireframe](.devcontainer/docs/images/Wireframe.png)
  </details>
 
-This application is a simple game of Tic Tac Toe.  The application loads with the sound muted and has an unmute button to toggle the sound On/Off.  The sounds are played when a user places an X or an O in a cell on the gameBoard and when the game is over.  The sound is muted on initial load.
-
-An empty gameBoard is presented with 9 cells in a 3 x 3 grid.  The cursor becomes a pointer when placed over the Mute/Unmute button, the cells in the grid and the restart button when it is presented.  X always goes first.  When X places his mark, the turn is switched to O.
-
-In order to indicate whose turn it is, the user is presented with an X or an O when they hover over an empty cell.  If the cell is occupied, the hover is deactivated.  When the application is loaded, it initialises with X being the first player and thus, an X hovers over all 9 cells until X places their mark. 
-
-On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the cell you'd like to select, but the mark is not placed unles you press a cell briefly.  
-
-The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
-
- <details>
-
- <summary>Am I Responsive Images</summary>
-
-![Tic Tac Toe - Am I Responsive Image](.devcontainer/docs/images/AmIResponsiveResults.png)
- </details>
-
-## Site Owner Goals 
-- To provide the user with information about the benefits of yoga, with a particular focus on mental wellbeing. 
-- To provide the user with clear and concise instructions as to how to complete each pose along with a demonstrative image and a description of the emotional benefits.
-- To present the user with a website that is easy to navigate, fully responsive and invokes a sense of calm through the use of appropriate colours and imagery. 
-- To enable the user to locate yoga studios in their local area if they wish to continue their practice.
-- To allow users to contribute their suggested yoga poses and sign up to the Mind Yoga Newsletter. 
-
-## User Stories
-- ### First time user / Returning User / Frequent User
-  - The application is simple, its a game of Tic Tac Toe between two players.  It never progresses betond that.  
-
-## Design
-Its designed to be intuitive to figure out, thereby no insctructions are given.  The only barrier to playing the game is, if you don't know how to play TicTacToe!
-
-### Imagery
-There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate withing the realms of the app.  Within the page boundaries, visual clues are given on what you can/should do or a popup appears with concise instructions on your next possible options.  
-
-### Colours
-The colour scheme of the website are black, white and green with varying shades of green used for the hover effect.  
-[WebAIM Contrast Checker Result 1](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=FBFAF8)  
-[WebAIM Contrast Checker Result 2](https://webaim.org/resources/contrastchecker/?fcolor=79A749&bcolor=000000)
-
-
-
-### Fonts
-The "Permanent Marker" font is the main font used for the mark of X or O.  This font was imported via [Google Fonts](https://fonts.google.com/). I'm used Cursive as a backup font, in case for any reason the main font isn't being imported into the site correctly.
-
-
-
- 
-
+### Layout
+This site is a single page site with 5 sections:
+- an Instruction overlay
+- control buttons to control the Sound and Instructions
+- a Score area
+- a Game area
+- a Results and Restart area
 
 ## Features
-- This is a single page application of Tic Tac Toe.  X always goes first.  The application loads with the sound muted and has an unmute button to toggle the sound On/Off.  The sounds are played when a user places an X or an O in a cell on the gameBoard and when the game is over.  The sound is muted on initial load.
+The landing page is an overlay with an opacity of .9 that covers the entire viewport.  It explains what each icon does and the rules of Tic Tac Toe.  Once the X icon to close the page is clicked, the game is revealed.  
 
-An empty gameBoard is presented with 9 cells in a 3 x 3 grid.  The cursor becomes a pointer when placed over the Mute/Unmute button, the cells in the grid and the restart button when it is presented.  X always goes first.  When X places his mark, the turn is switched to O.
+The site has a very simple layout which includes a h1 heading stating the name of the game.  Below the h1, two large icons/buttons are displayed.  Hovering over the icons indicates their function. 
+the first icon toggles between mute and unmute, the site defaults to mute. 
+
+The second icon redisplays the overlay with the instructions.
+
+The site works best in portrait and media queries are used to prevent the viewport rotating if the size of the screen is less than 320px x 767px, the exact size of the game area. 
+
+Below the icons, the scoreArea is displayed, these scores are updated by javascript (JS).  
+
+Then the gameBoard is displayed in a 3x4 grid, this is where the Xs and Os are displayed.  
 
 In order to indicate whose turn it is, the user is presented with an X or an O when they hover over an empty cell.  If the cell is occupied, the hover is deactivated.  When the application is loaded, it initialises with X being the first player and thus, an X hovers over all 9 cells until X places their mark. 
 
-On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the cell you'd like to select, but the mark is not placed unles you press a cell briefly.  
+On touch screen devices, (devices without a pointer), the X/O hover works by pressing and holding the cell you'd like to select, but the mark is not placed unless you press a cell briefly.  
 
-### Features Left to Implement
-- Perhaps a link to ![Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe) when you click on the h1.
-- In addition to the hover effect indicating who the current player is, perhaps some text also appearing.
-- Include inputs at the outset to indicate the name of Player 1 (X) and Player 2 (O).
-- Make it a one player game, playing against the computer.
+Everytime a mark is placed in a cell, a click sound is made when the game is unmuted.
+
+Everytime a mark is placed, JS determines if this has resulted in a Win or Draw, if it does, a gameOverSound is played, a div with the result is displayed, identifying X or O as the winner and the scoreArea is updated to increment the DRAW/X wins/O wins.  The Restart button is presented in this div, to run the JS code to reset the gameBoard and hover effects.  If cells remain unoccupied and a winner has not been determined, the game continues. 
 
 ## Testing
 
 ### Validator Testing
-- #### HTML
-    - No errors were returned when passing through the official W3C Markup Validator
-        - [W3C Validator Results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
-    - One Empty Heading Warning initially appeared.  I inserted a period that would be replaced by javascript innerText once the game has ended.  The period will be replaced by javascript generated resultText.
+- #### HTML 
+
+No errors were returned when passing through the official W3C Markup Validator [W3C Validator Results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
+        
 - #### CSS
-    - No errors were found when passing through the official W3C CSS Validator 
-        - [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-- #### Accessibility 
-    - The site achieved a Lighthouse accessibility score of 100% which confirms that the colours and fonts chosen are easy to read and accessible 
+
+No errors were returned when passing through the official W3C CSS Validator [W3C CSS Validator Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- #### Accessibility
+
+The site achieved a Lighthouse accessibility score of 98% indicating that the colours and fonts chosen are easy to read and accessible .  
 
    <details>
     <summary>Lighthouse Result</summary>
@@ -95,18 +153,17 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
     </details>
 
 - #### Jshint 
--- There is 1 warning: "Expected an assignment or function call and instead saw an expression." - the code works and produces no Warnings or Errors in the DOM Console.
     
--   <details>
+   <details>
     <summary>Jshint Result</summary>
 
     ![Lighthouse Score](.devcontainer/docs/images/jshint-result.png)
     </details>
- 
+- There is 1 warning: "Expected an assignment or function call and instead saw an expression." - the code works and produces no Warnings or Errors in the DOM Console.
+
 ### Links Testing
 - The navigation link was tested manually to ensure the user is directed to the correct external wikipedia site.
  
-
 ### Browser Testing
 - The Website was tested on Google Chrome, Firefox, Microsoft Edge, Safari browsers with no issues noted.
     
@@ -116,29 +173,48 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
     - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
     - [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
 
-
-
 ### Friends and Family User Testing
-Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues. They tested on a variety of iPhones and Android devices.  The :hover::after css works but only if you know that you need to touch the screen for a milisecond longer than normal!
+Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues. They tested on a variety of iPhones and Android devices.  On devices with no mouse, the :hover::after css works but only if you know that you need to touch the screen for a milisecond longer than normal!
 On one users android device, the sound works for the first mark being placed and then doesn't work for the remaining moves.  The bug could not be replicated.
 
 ### Fixed Bugs
+
 #### Mute/Unmute image did not appear in the browser, despite the button element showing up
-- I was using the incorrect path and it took a long to to figure out but was fixed by changing the path to the images file by including "../" in the path.
+
+I was using the incorrect path and it took a long to to figure out but was fixed by changing the path to the images file by including "../" in the path.
+
 #### The Score Area did not work and produced console errors.  On github.io the game never revealed the score, the game never concluded despite being OVER!
-- This took a really long time to figure out because the error was caused by the deployment being out of sync with the code.  Git showed that the code I used had been commited to Git, but when I inspected the code in the browser, the code was a previous version of the code.  I rebuilt the deployment and the code updated in the browser and worked as expected.
+
+This took a really long time to figure out because the error was caused by the deployment being out of sync with the code.  Git showed that the code I used had been commited to Git, but when I inspected the code in the browser, the code was a previous version of the code.  I rebuilt the deployment and the code updated in the browser and worked as expected.
+
+### Known Bugs
+
+- Touch screen devices make the entire gameBoard div, shimmer before displaying the hover effects.
+- The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
+- The media queries are not refined enough to keep the game in portrait mode if the user rotates their device to landscape.  The rules work on [emulators](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F) but not on all of the physical devices I've tested on.
+
+### Features Left to Implement
+
+- Include inputs at the outset to indicate the name of Player 1 (X) and Player 2 (O).
+- Allow users to login and create a profile so that their scores could be recorded on a persistent leaderboard.  
+- Make it a one player game, playing against the computer.  This would also require a timer function in order for the leaderboard to make sense ie the player who beats the computer in the least amount iof time.
+- Save player score to the leaderboard.  
+- A two player game where both players are at different devices of the same game.
 
 #### game does not look well on small devices when in landscape:
 
 [Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website) - this didn't work!
 
-### Known Bugs
-- Touch screen devices make the entire gameBoard div, shimmer before displaying the hover effects.
-- The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
-- The media queries are not refined enough to keep the game in portrait mode if the user rotates their device to landscape.  The rules work on [emulators](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F) but not on all of the physical devices I've tested on.  
 
+## Deployment
+The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
+ <details>
 
+ <summary>Am I Responsive Images</summary>
+
+![Tic Tac Toe - Am I Responsive Image](.devcontainer/docs/images/AmIResponsiveResults.png)
+ </details>
 
 ## Technologies Used
 
