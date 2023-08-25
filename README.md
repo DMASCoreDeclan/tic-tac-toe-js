@@ -1,6 +1,16 @@
 ![TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
 # Tic Tac Toe
 
+## Wireframes
+Wireframes were produced using Paint.net. 
+
+ <details>
+
+ <summary>Wireframe</summary>
+
+![Wireframe](.devcontainer/docs/images/Wireframe.png)
+ </details>
+
 This application is a simple game of Tic Tac Toe.  The application loads with the sound muted and has an unmute button to toggle the sound On/Off.  The sounds are played when a user places an X or an O in a cell on the gameBoard and when the game is over.  The sound is muted on initial load.
 
 An empty gameBoard is presented with 9 cells in a 3 x 3 grid.  The cursor becomes a pointer when placed over the Mute/Unmute button, the cells in the grid and the restart button when it is presented.  X always goes first.  When X places his mark, the turn is switched to O.
@@ -45,21 +55,9 @@ The colour scheme of the website are black, white and green with varying shades 
 ### Fonts
 The "Permanent Marker" font is the main font used for the mark of X or O.  This font was imported via [Google Fonts](https://fonts.google.com/). I'm used Cursive as a backup font, in case for any reason the main font isn't being imported into the site correctly.
 
-## Wireframes
-Wireframes were produced using Balsamiq. 
 
- <details>
 
- <summary>Desktop Wireframe</summary>
-
-![Desktop Wireframe](docs/wireframes/desktopwireframe.png)
- </details>
-
- <details>
-    <summary>Mobile Wireframe</summary>
-
-![Mobile Wireframe](docs/wireframes/mobilewireframe.png)
- </details>
+ 
 
 
 ## Features
@@ -82,7 +80,7 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
 ### Validator Testing
 - #### HTML
     - No errors were returned when passing through the official W3C Markup Validator
-        - [W3C Validator Results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
+        - [W3C Validator Results](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
     - One Empty Heading Warning initially appeared.  I inserted a period that would be replaced by javascript innerText once the game has ended.  The period will be replaced by javascript generated resultText.
 - #### CSS
     - No errors were found when passing through the official W3C CSS Validator 
@@ -90,22 +88,24 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
 - #### Accessibility 
     - The site achieved a Lighthouse accessibility score of 100% which confirms that the colours and fonts chosen are easy to read and accessible 
 
-    <details>
+   <details>
     <summary>Lighthouse Result</summary>
 
-    ![Lighthouse Score](.devcontainer\docs\images\lighthouse-score.png)
+    ![Lighthouse Score](.devcontainer/docs/images/lighthouse-score.png)
     </details>
 
 - #### Jshint 
-    <details>
+-- There is 1 warning: "Expected an assignment or function call and instead saw an expression." - the code works and produces no Warnings or Errors in the DOM Console.
+    
+-   <details>
     <summary>Jshint Result</summary>
 
-    ![Lighthouse Score](.devcontainer\docs\images\jshint-result.png)
+    ![Lighthouse Score](.devcontainer/docs/images/jshint-result.png)
     </details>
  
 ### Links Testing
-- All navigation links were tested manually to ensure the user is directed to the correct section of the website.
-- Social Media links in the footer of each page were tested manually to ensure they direct the user to the correct page and open in a new tab. 
+- The navigation link was tested manually to ensure the user is directed to the correct external wikipedia site.
+ 
 
 ### Browser Testing
 - The Website was tested on Google Chrome, Firefox, Microsoft Edge, Safari browsers with no issues noted.
@@ -116,22 +116,28 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
     - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
     - [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F)
 
-https://dmascoredeclan.github.io/tic-tac-toe-js/
+
 
 ### Friends and Family User Testing
 Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues. They tested on a variety of iPhones and Android devices.  The :hover::after css works but only if you know that you need to touch the screen for a milisecond longer than normal!
+On one users android device, the sound works for the first mark being placed and then doesn't work for the remaining moves.  The bug could not be replicated.
 
 ### Fixed Bugs
 #### Mute/Unmute image did not appear in the browser, despite the button element showing up
 - I was using the incorrect path and it took a long to to figure out but was fixed by changing the path to the images file by including "../" in the path.
+#### The Score Area did not work and produced console errors.  On github.io the game never revealed the score, the game never concluded despite being OVER!
+- This took a really long time to figure out because the error was caused by the deployment being out of sync with the code.  Git showed that the code I used had been commited to Git, but when I inspected the code in the browser, the code was a previous version of the code.  I rebuilt the deployment and the code updated in the browser and worked as expected.
 
 #### game does not look well on small devices when in landscape:
 
 [Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website) - this didn't work!
 
 ### Known Bugs
--Touch screen devices make the etire gameBoard div, shimmer before displaying the hover effects.
--The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
+- Touch screen devices make the entire gameBoard div, shimmer before displaying the hover effects.
+- The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
+- The media queries are not refined enough to keep the game in portrait mode if the user rotates their device to landscape.  The rules work on [emulators](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F) but not on all of the physical devices I've tested on.  
+
+
 
 
 ## Technologies Used
@@ -144,7 +150,6 @@ Friends and family members were asked to review the site and documentation to po
 ### Frameworks - Libraries - Programs Used
 - [Am I Responsive](http://ami.responsivedesign.is/) - Used to verify responsiveness of website on different devices.
 - [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
-- [Balsamiq](https://balsamiq.com/) - Used to generate Wireframe images.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
 - [GitHub](https://github.com/) - Used for version control and hosting.
 - [MyGitHub](https://github.com/DMASCoreDeclan/tic-tac-toe-js) - Used for version control and hosting of this project.
@@ -183,8 +188,8 @@ Mute/Unmute pngs which were recolored, renamed, restyled
  - [Kyle from Web Dev Simplified](https://www.youtube.com/watch?v=Y-GkMjUZsmM&t=939s) - index.html.old and script.js.old
  - [Ania Kubów](https://youtu.be/DRaWr0Dcbl0) - index.html.old and script.js.old
  - [Bro Code](https://youtu.be/AnmwHjpEhtA)
- - [Coding with Adam from](https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s)
- - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg) - how to toggleMute in JS
+ - [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s)
+ - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg) - toggleMute in JS
  - [CSS-Tricks](https://css-tricks.com/snippets/css/orientation-lock/) - to prevent the screen rotating from portrait to landscape 
 
  - While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
