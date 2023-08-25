@@ -25,7 +25,9 @@ h1 {
     margin-bottom: 2px;
 }
 
-h3 {
+#game-score-d,
+#game-score-x,
+#game-score-o {
     padding: 0px;
     margin: 0px;
 }

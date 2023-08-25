@@ -15,6 +15,7 @@ const player_x = "X";
 const player_o = "O";
 let score_x = 0;
 let score_o = 0;
+let score_d = 0;
 let turn = player_x;
 let showModal = true;
 
@@ -26,7 +27,9 @@ gameBoard.fill("");
 const strike = document.getElementById('strike');
 const gameMessages = document.getElementById('game-messages');
 const gameResult = document.getElementById('game-result');
-const gameScore = document.getElementById('game-score');
+const gameScoreD = document.getElementById('game-score-d');
+const gameScoreX = document.getElementById('game-score-x');
+const gameScoreO = document.getElementById('game-score-o');
 const restartButton = document.getElementById('restart-button');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
@@ -136,10 +139,16 @@ function checkResult() {
 
 function gameOver(cellContents1) {
     let resultText = `Draw!`;
+    
     if (cellContents1 != "Draw") {
         resultText = `Winner is ${cellContents1}!`;
         (cellContents1.toLowerCase() == "x") ? score_x++ : score_o++;
-        gameScore.innerText = `X's Score: ${score_x} - O's Score: ${score_o}`;
+        gameScoreX.innerText = `X won: ${score_x}`;
+        gameScoreO.innerText = `O won: ${score_o}`;
+
+    } else {
+        score_d++;
+        gameScoreD.innerText = `Draws: ${score_d}`;
     }
 
     //Show the gameMessage div and the gameResult
