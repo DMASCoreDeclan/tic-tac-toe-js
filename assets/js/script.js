@@ -18,6 +18,7 @@ let score_o = 0;
 let score_d = 0;
 let turn = player_x;
 let showModal = true;
+let computerPlayer = true;
 
 // Create the Board Array to keep track of where players place their O's ans O's
 const gameBoard = Array(cells.length);
@@ -35,7 +36,7 @@ const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
 const openModal = document.getElementById('open-modal');
 const muteButton = document.getElementById('mute-button');
-
+const player = document.getElementById('number-of-players-one');
 //Get sound placeholders
 const clickSound = new Audio('assets/sounds/click-sound.wav');
 const gameOverSound = new Audio('assets/sounds/game-over-sound.wav');
@@ -55,17 +56,37 @@ const winningPossibilities = [
     { combination: [0, 4, 8], strikeClass: "strike-diagonal-2" }
 ];
 
-//Add an Event Listener to each cell and determine what to do when a cell is clicked
-cells.forEach((cell) => cell.addEventListener('click', handleClick));
+/** togglePlayer toggles between playing against an opponent or against the computer 1 or 2 Player mode.  
+* The default state is for 2 players.  
+* Remove an Event Listener to each cell and determine what to do when a cell is clicked
+* Add an Event Listener to each cell and determine what to do when a cell is clicked */
+function togglePlayer() {
+    if (player.id == ('number-of-players-one')) {
+        restartGame();
+        player.setAttribute('id', 'number-of-players-two');
+        // player.id.add('number-of-players-one');
+        cells.forEach((cell) => cell.addEventListener('click', handleClickComputer));
+        return handleClickComputer;
+    } else {
+        restartGame();
+        player.setAttribute('id', 'number-of-players-one'); 
+        computerPlayer = false;
+        cells.forEach((cell) => cell.addEventListener('click', handleClickPlayerVsPlayer));
+        return handleClickPlayerVsPlayer;
+    }  
+}
 
-//Apply a Hover Effect to indicate whose turn it is
+//Add event listener to the number of players button
+player.addEventListener('click', togglePlayer);
+
+
+/** Apply a Hover Effect to indicate whose turn it is */
 function hoverText() {
     //Remove existing hover classes
     cells.forEach((cell) => {
         cell.classList.remove('x-hover');
         cell.classList.remove('o-hover'); 
     });
-
     const hoverClass = `${turn.toLowerCase()}-hover`;
     cells.forEach((cell) => {
         if (cell.innerText == "") {
@@ -77,8 +98,65 @@ function hoverText() {
 //Initialise Hover Effect
 hoverText();
 
-// Logic to indicate whether a cell can be clicked, whose turn it is and evaluate the results each time a mark is placed on the gameBoard
-function handleClick(clickedCell) {
+/** Playing the Computer - Logic to indicate whether a cell can be clicked, whose turn it is and evaluate the results each time a mark is placed on the gameBoard */
+function handleClickComputer(clickedCell) {
+    //If the game is over, do not execute
+    if (gameMessages.classList.contains('show')) {
+        return;
+    }
+    
+    //Store the cell number that the user clicked on and get the cell number of that tile 
+    const cell = clickedCell.target;
+    const cellNumber = parseInt(cell.dataset.cellIndex) - 1;
+    
+    //If the cell is not empty, do not execute
+    if (cell.innerText != "") {
+        return;
+    }
+    cell.innerText = player_x;
+    gameBoard[cellNumber] = player_x;
+
+    // Play sound when a cell is clicked
+    playClick();
+    //Indicate an X or an O for where the current player can choose his next cell
+    hoverText();
+    //Check to see if the last cell occupied produces a Winner or a Draw
+    if (checkResult() === false){
+        computerPlay();
+    }
+}
+/** Pick a number from 1 to 9 */
+function computerMove(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/** check to see if the number chosen is free to place a mark, if not, pick another number */
+function computerPlay(){
+    let spaceFound = false;
+    let randomIndex = computerMove(0, 8);
+    while (spaceFound == false){
+        if (gameBoard[randomIndex - 1]== "") {
+            spaceFound = true;
+        }
+        else{
+            randomIndex = computerMove(0, 8);
+        }
+    }
+    gameBoard[randomIndex - 1] = player_o;
+    document.querySelector(`[data-cell-index="${randomIndex}"]`).innerText = player_o;
+    
+    //Play sound when a cell is clicked
+    playClick();
+    
+    //Indicate an X or an O for where the current player can choose his next cell
+    hoverText();
+    
+    //Check to see if the last cell occupied produces a Winner or a Draw
+    checkResult();
+}
+
+/** Playing another Player - Logic to indicate whether a cell can be clicked, whose turn it is and evaluate the results each time a mark is placed on the gameBoard */
+function handleClickPlayerVsPlayer(clickedCell) {
     //If the game is over, do not execute
     if (gameMessages.classList.contains('show')) {
         return;
@@ -97,11 +175,12 @@ function handleClick(clickedCell) {
     if (turn === player_x) {
         cell.innerText = player_x;
         gameBoard[cellNumber] = player_x;
-        turn = player_o;
+        turn = player_o;    
     } else {
         cell.innerText = player_o;
         gameBoard[cellNumber] = player_o;
         turn = player_x;
+        // computerPlay();
     }
     //Play sound when a cell is clicked
     playClick();
@@ -112,9 +191,9 @@ function handleClick(clickedCell) {
     //Check to see if the last cell occupied produces a Winner or a Draw
     checkResult();
 }
-
 function checkResult() {
     //Check for Winner
+    let endGame = false;
     for(const winningPosibility of winningPossibilities) {
         //If the clicked cells have the same number as the winningPossibility, identify the corresponding strikeClass
         const { combination, strikeClass } = winningPosibility;
@@ -125,6 +204,7 @@ function checkResult() {
         if (cellContents1 != "" && cellContents1 === cellContents2 && cellContents1 === cellContents3) {
             strike.classList.add(strikeClass);
             gameOver(cellContents1);
+            endGame = true;
             return;
         }
     }
@@ -134,18 +214,19 @@ function checkResult() {
     const noEmptyCells = gameBoard.every((cell) => cell !== "" );
     if (noEmptyCells) {
         gameOver("Draw");
+        endGame = true;
     }
+    return endGame;
 }
 
+/** Displays the Result of the game and presents a button to restart the game. */
 function gameOver(cellContents1) {
     let resultText = `Draw!`;
-    
     if (cellContents1 != "Draw") {
         resultText = `Winner is ${cellContents1}!`;
         (cellContents1.toLowerCase() == "x") ? score_x++ : score_o++;
         gameScoreX.innerText = `X won: ${score_x}`;
         gameScoreO.innerText = `O won: ${score_o}`;
-
     } else {
         score_d++;
         gameScoreD.innerText = `Draws: ${score_d}`;
@@ -159,12 +240,14 @@ function gameOver(cellContents1) {
     playGameOverSound();
 }
 
-//Reset the gameBoard, remove strikethrough classes, hide the gameMEssage div, replace the contents of the Xs and Os array with "" and make player_x the next player
+/** Reset the gameBoard, remove strikethrough classes, hide the gameMEssage div, replace the contents of the Xs and Os array with "" and make player_x the next player */
 function restartGame () {
     strike.className = 'strike';
     gameMessages.className = 'hide';
     gameBoard.fill("");
     cells.forEach((cell) => (cell.innerText = ""));
+    cells.forEach((cell) => cell.removeEventListener('click', handleClickComputer));
+    cells.forEach((cell) => cell.removeEventListener('click', handleClickPlayerVsPlayer));
     turn = player_x;
     hoverText();
 }
@@ -173,7 +256,7 @@ function restartGame () {
 restartButton.addEventListener('click', restartGame);
 
 // GameSounds, Mute and Unmute Function
-// toggleMute toggles the unmute button to On/Off.  It then sets the clickSound and gameOverSound from mute to unmute.  The default state is for the sound to be muted
+/** toggleMute toggles the unmute button to On/Off.  It then sets the clickSound and gameOverSound from mute to unmute.  The default state is for the sound to be muted */
 function toggleMute() {
     if (clickSound.muted) {
         clickSound.muted = false;
@@ -191,19 +274,19 @@ muteButton.addEventListener('click', toggleMute);
 clickSound.muted = true;
 gameOverSound.muted = true;
 
-// playClick when a cell is clicked on, if toggleMute is unmuted
+/** playClick when a cell is clicked on, if toggleMute is unmuted  */
 function playClick() {
     clickSound.volume = 0.05;
     clickSound.play();
 }
 
-// playGameOverSound when the game is over, if toggleMute is unmuted
+/** playGameOverSound when the game is over, if toggleMute is unmuted */
 function playGameOverSound() {
     gameOverSound.volume = 0.05;
     gameOverSound.play();
 }
 
-// toggleInstructions on initial load, show instructions modal and toggle the css show/hide from a button 
+/** toggleInstructions on initial load, show instructions modal and toggle the css show/hide from a button */
 function toggleInstructions(){
     if (showModal === true){
         modal.classList.remove('hide');
@@ -219,3 +302,9 @@ closeModal.addEventListener('click', toggleInstructions);
 openModal.addEventListener('click', toggleInstructions);
 
 toggleInstructions();
+
+
+
+
+
+ 

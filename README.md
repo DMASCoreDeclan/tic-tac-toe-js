@@ -1,42 +1,5 @@
-- [Tic Tac Toe](#tic-tac-toe)
-  * [Site Owner Goals](#site-owner-goals)
-    + [First Time User](#first-time-user)
-    + [Returning user](#returning-user)
-    + [Frequent user](#frequent-user)
-  * [Design](#design)
-    + [Colours](#colours)
-    + [Fonts](#fonts)
-    + [Imagery](#imagery)
-    + [Wireframe](#wireframe)
-    + [Layout](#layout)
-  * [Features](#features)
-  * [Testing](#testing)
-    + [Validator Testing](#validator-testing)
-      - [HTML](#html)
-      - [CSS](#css)
-      - [Accessibility](#accessibility)
-      - [Jshint](#jshint)
-    + [Links Testing](#links-testing)
-    + [Browser Testing](#browser-testing)
-    + [Device Testing](#device-testing)
-    + [Friends and Family User Testing](#friends-and-family-user-testing)
-    + [Fixed Bugs](#fixed-bugs)
-      - [Mute/Unmute image did not appear in the browser, despite the button element showing up](#mute-unmute-image-did-not-appear-in-the-browser--despite-the-button-element-showing-up)
-      - [The Score Area did not work and produced console errors.  On github.io the game never revealed the score, the game never concluded despite being OVER!](#the-score-area-did-not-work-and-produced-console-errors--on-githubio-the-game-never-revealed-the-score--the-game-never-concluded-despite-being-over-)
-    + [Known Bugs](#known-bugs)
-    + [Features Left to Implement](#features-left-to-implement)
-      - [game does not look well on small devices when in landscape:](#game-does-not-look-well-on-small-devices-when-in-landscape-)
-  * [Deployment](#deployment)
-  * [Technologies Used](#technologies-used)
-    + [Languages](#languages)
-    + [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
-  * [Deployment](#deployment-1)
-  * [Credits](#credits)
-    + [Media](#media)
-    + [Resources Used](#resources-used)
-  * [Acknowledgments](#acknowledgments)
+![TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Tic Tac Toe
 
@@ -48,7 +11,7 @@ On initial load, the sound is muted and has an unmute button to toggle the sound
 
  The cursor becomes a pointer when placed over the Mute/Unmute, Instructions, Restart buttons and the cells in the grid.  
  
- X always goes first.  When X places his mark, the turn is switched to O.
+ X always goes first.  When X places their mark, the turn is switched to O.
 
 
 ## Site Owner Goals
@@ -57,24 +20,16 @@ On initial load, the sound is muted and has an unmute button to toggle the sound
 - To present the user with a website that is intuitive and does not need any instructions, despite them being provided.  
 
 ###	First Time User
-- As a first time user I want to understand the main purpose of the game.
+- As a first time user I want to be able to easily understand the purpose of the game.
 - As a first time user I want to be able to intuitively navigate the game, play the game, see my score and restart the game once it ends.
-- As a first time user I want to have fun.
-- As a first time user I want to beat my opponent.
+- As a first time user I want to be able to access the instructions of the game.
 
 ### Returning user
 - As a returning user I want to have fun.
 - As a returning user I want to beat my opponent.
-- As a returning user I want to be able to save my score to the leaderboard.  (not developed).
-
-### Frequent user
-- As a frequent user I want to be able to play against the computer.  (not developed).
-- As a frequent user I want to be able to beat my previous score.  (not developed).
-- As a frequent user I want to be able to play against an opponent who is in another part of the world!  (not developed).
 
 ## Design
 Its designed to be intuitive to figure out, using commonplace icons which give clear purpose messages when hovered over. 
-
 
 ### Colours
 The colour scheme of the website are black, white and green with lighter shades of green used for the hover effect.  
@@ -89,10 +44,10 @@ There are two fonts used in the site: "Varela", backed up by sans-serif and "Per
 "Varela" is used throughout while "Permanent Marker" font is the main font used for the mark of X and O.  These fonts were imported via [Google Fonts](https://fonts.google.com/). 
 
 ### Imagery
-There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate withing the realms of the actionable areas of the site.  Within the page boundaries, visual clues are given on what you can/should do, or a popup appears with concise instructions on your next possible options.  
+There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate within the realms of the actionable areas of the site.  Within the page boundaries, visual clues are given on what you can/should do, or a popup appears with concise instructions on your next possible options.  
 
 ### Wireframe
-The wireframe was produced using Paint.net. 
+The wireframe was produced using Paint.net. The wireframe for the Mobile and Desktop are the same, as the game was designed for a Mobile device.
 
  <details>
 
@@ -177,7 +132,7 @@ On one users android device, the sound works for the first mark being placed and
 
 #### Mute/Unmute image did not appear in the browser, despite the button element showing up
 
-I was using the incorrect path and it took a long to to figure out but was fixed by changing the path to the images file by including "../" in the path.
+I was using the incorrect path and it took a long to figure out but was fixed by changing the path to the images file by including "../" in the path.
 
 #### The Score Area did not work and produced console errors.  On github.io the game never revealed the score, the game never concluded despite being OVER!
 
@@ -186,14 +141,13 @@ This took a really long time to figure out because the error was caused by the d
 ### Known Bugs
 
 - Touch screen devices make the entire gameBoard div, shimmer before displaying the hover effects.
-- The game just doesn't appear well on small mobile devices in landscap mode.  Adjusting the size makes it almost impossible to play
+- The game just doesn't appear well on small mobile devices in landscape mode.  Adjusting the size makes it almost impossible to play
 - The media queries are not refined enough to keep the game in portrait mode if the user rotates their device to landscape.  The rules work on [emulators](http://www.responsinator.com/?url=https%3A%2F%2Fdmascoredeclan.github.io%2Ftic-tac-toe-js%2F) but not on all of the physical devices I've tested on.
 
 ### Features Left to Implement
-
 - Include inputs at the outset to indicate the name of Player 1 (X) and Player 2 (O).
 - Allow users to login and create a profile so that their scores could be recorded on a persistent leaderboard.  
-- Make it a one player game, playing against the computer.  This would also require a timer function in order for the leaderboard to make sense ie the player who beats the computer in the least amount iof time.
+- Make it a one player game, playing against the computer.  This would also require a timer function in order for the leaderboard to make sense ie the player who beats the computer in the least amount of time.
 - Save player score to the leaderboard.  
 - A two player game where both players are at different devices of the same game.
 
@@ -245,13 +199,21 @@ The live link can be found here - [Tic Tac Toe](https://dmascoredeclan.github.io
 
 ### Media
 
-- [TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
- -- (https://icon-icons.com/icon/tic-tac-toe/39453)
+[TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
+ 
+- (https://icon-icons.com/icon/tic-tac-toe/39453)
 
-- [ICONFINDER](https://www.iconfinder.com/)
-Mute/Unmute pngs which were recolored, renamed, restyled
- -- (https://www.iconfinder.com/icons/4593140/audio_max_sound_speaker_volume_icon)
- -- (https://www.iconfinder.com/icons/4593142/audio_mute_sound_speaker_volume_icon)
+[Iconfinder](https://www.iconfinder.com/) - Mute/Unmute pngs which were recolored, renamed, restyled
+
+- (https://www.iconfinder.com/icons/4593140/audio_max_sound_speaker_volume_icon)
+
+- (https://www.iconfinder.com/icons/4593142/audio_mute_sound_speaker_volume_icon)
+
+[Flaticon](https://www.flaticon.com/free-icons/vs) - One/Two player icons
+ 
+- https://www.flaticon.com/search?word=player%20versus%20computer
+ 
+- https://www.flaticon.com/search?word=player%20versus%20player
 
 
 ### Resources Used
@@ -262,12 +224,16 @@ Mute/Unmute pngs which were recolored, renamed, restyled
  - [Bro Code](https://youtu.be/AnmwHjpEhtA)
  - [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA&t=1906s)
  - [Adam Khoury](https://www.youtube.com/watch?v=hsSXzdn_0Gg) - toggleMute in JS
- - [CSS-Tricks](https://css-tricks.com/snippets/css/orientation-lock/) - to prevent the screen rotating from portrait to landscape 
+ - [CSS-Tricks](https://css-tricks.com/snippets/css/orientation-lock/) - to prevent the screen rotating from portrait to landscape
+ - [Flaticon](https://www.flaticon.com/free-icons/vs)
+ 
 
- - While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodinWithAdma channel, but were renamed before upload and are called by different names in JS.
+ - While some code just has to be the same, all Variable names, CSS names and Function names have been changed.  The design is fundamentally the same as Coding with Adam, with additional feature such as the Mute/Unmute Audio button.  The .wav sounds are downloaded from CodingWithAdmam channel, but were renamed before upload and are called by different names in JS.
     
 
 ## Acknowledgments
+A huge THANKS to Jamie_cohort_lead_5p - my colleague on the course :)
+
 My mentor Antonio for his support and advice.
 
 The Code Institute slack community for their quick responses and very helpful feedback!

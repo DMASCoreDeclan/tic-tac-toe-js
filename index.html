@@ -34,17 +34,24 @@
   <!-- class used by CSS.  id and data* used to return infomation from JaveScrip-->
   <h1 class="center">Tic Tac Toe</h1>
   <div class="header">
+    <!--toggleMute between unmute and mute-->
     <button id="mute-button" aria-label="Sound Toggle to mute or unmute the sound.  The default is that the sound is muted"
       title="Mute/Unmute"></button>
+    <!--toggleMute between unmute and mute-->
+    <button id="number-of-players-one" aria-label="Choose to play against an opponent or the computer"
+    title="Play againt an Opponent or Computer"></button>
     <!-- Displays the instructions -->
     <button id="open-modal" aria-label="Instruction Toggle to show the instructions" title="Show Instructions"></button>
   </div>
 
   <!-- Displays the score -->
-  <div id="game-score-d">Draws: 0</div>
-  <div id="game-score-x">X won: 0</div>
-  <div id="game-score-o">O won: 0</div>
+  <div id="game-score-area">
+    <div id="game-score-d">Draws: 0</div>
   
+    <div id="game-score-x">X won: 0</div>
+  
+    <div id="game-score-o">O won: 0</div>
+  </div>
   <!-- 3x3 grid for the gameBoard -->
   <div class="gameBoard" id="board">
     <div data-cell-index="1" class="cell right-border bottom-border"></div>
@@ -76,7 +83,8 @@
   <div id="modal" class="hide">
     <h3> Tic Tac Toe Instructions</h3>
     <p class="instructions">Press <span> <img src="assets/images/mute-20px.png" alt="unmute icon" aria-label="unmute icon" > </span> to toggle the sound from mute to unmute.</p>
-    <p class="instructions">Press <span> <img src="assets/images/instructions-20px.png " alt="instruction icon" aria-label="instruction icon" > </span> to show the instructions.  </p>
+    <p class="instructions">Press <span> <img src="assets/images/two-player-green-20px.png" alt="two player icon" aria-label="two player icon" > </span> to toggle the number of players  </p>
+    <p class="instructions">Press <span> <img src="assets/images/instructions-20px.png" alt="instruction icon" aria-label="instruction icon" > </span> to show the instructions.  </p>
     <p class="instructions">Tic Tac Toe or, Xs and Os, is a game for two players who take turns marking the cells in a
       three-by-three grid with an X or an O.</p>
     <p class="instructions">X always goes first.</p>

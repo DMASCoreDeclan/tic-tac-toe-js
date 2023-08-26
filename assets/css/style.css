@@ -25,22 +25,25 @@ h1 {
     margin-bottom: 2px;
 }
 
+#game-score-area {
+    display: flex;
+}
+
 #game-score-d,
 #game-score-x,
 #game-score-o {
-    padding: 0px;
-    margin: 0px;
+    padding: 10px 25px;
+    margin: 1px;
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
 }
-
 
 #game-score {
     padding: 15px;
-    /* padding top: 0px; */
 }
 
 /* Create a 3 x 100px by 3 x 100 px grid gameBoard with a style of Permanent MArker */
@@ -187,17 +190,20 @@ h2 {
 button#mute-button, 
 button#unmute-button,
 button#open-modal, 
-button#close-modal {
+button#close-modal,
+button#number-of-players-one, 
+button#number-of-players-two {
     border-style: none;
     cursor: pointer;
     outline: white;
     color: black;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 1px;
     height: 50px;
     width: 50px;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 /* mute image applied to sound button when the sound is muted */
@@ -210,10 +216,18 @@ button#close-modal {
     background: no-repeat url("../images/unmute.png");
 }
 
+/* #number-of-players,  */
+#number-of-players-one {
+    background: no-repeat url("../images/one-player-green-50px.png");
+}
 
+
+#number-of-players-two {
+    background: no-repeat url("../images/two-player-green-50px.png");
+}
 
 /* Modal */
-/* Javascrip uses this h2 for resultText messages indicating if its a Win or a Draw */
+
 #modal {
     font-family: 'Varela', sans-serif;
     position: absolute;
