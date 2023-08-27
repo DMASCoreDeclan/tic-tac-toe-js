@@ -152,8 +152,11 @@ h1 {
 
 /* Javascrip uses this h2 for resultText messages indicating if its a Win or a Draw */
 h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
     color: currentColor;
     font-size: 3rem;
+    min-width: 300px;
 }
 
 /* The button is within the #game-message div and only shows when the game is over.  Javascript resets the .gameBoard and sertarts the game when this button is clicked */
@@ -220,7 +223,6 @@ button#number-of-players-two {
 #number-of-players-one {
     background: no-repeat url("../images/one-player-green-50px.png");
 }
-
 
 #number-of-players-two {
     background: no-repeat url("../images/two-player-green-50px.png");

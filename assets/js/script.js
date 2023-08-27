@@ -56,6 +56,8 @@ const winningPossibilities = [
     { combination: [0, 4, 8], strikeClass: "strike-diagonal-2" }
 ];
 
+cells.forEach((cell) => cell.addEventListener('click', handleClickComputer));
+
 /** togglePlayer toggles between playing against an opponent or against the computer 1 or 2 Player mode.  
 * The default state is for 2 players.  
 * Remove an Event Listener to each cell and determine what to do when a cell is clicked
@@ -64,13 +66,14 @@ function togglePlayer() {
     if (player.id == ('number-of-players-one')) {
         restartGame();
         player.setAttribute('id', 'number-of-players-two');
-        // player.id.add('number-of-players-one');
+        cells.forEach((cell) => cell.removeEventListener('click', handleClickPlayerVsPlayer));
         cells.forEach((cell) => cell.addEventListener('click', handleClickComputer));
         return handleClickComputer;
     } else {
         restartGame();
         player.setAttribute('id', 'number-of-players-one'); 
         computerPlayer = false;
+        cells.forEach((cell) => cell.removeEventListener('click', handleClickComputer));
         cells.forEach((cell) => cell.addEventListener('click', handleClickPlayerVsPlayer));
         return handleClickPlayerVsPlayer;
     }  
@@ -246,8 +249,6 @@ function restartGame () {
     gameMessages.className = 'hide';
     gameBoard.fill("");
     cells.forEach((cell) => (cell.innerText = ""));
-    cells.forEach((cell) => cell.removeEventListener('click', handleClickComputer));
-    cells.forEach((cell) => cell.removeEventListener('click', handleClickPlayerVsPlayer));
     turn = player_x;
     hoverText();
 }

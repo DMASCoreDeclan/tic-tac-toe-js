@@ -1,5 +1,17 @@
 ![TicTacToe Favicon](assets/images/tic-tac-toe-white-100px.png)
 
+# Table of contents
+
+- [Tic Tac Toe](#tic-tac-toe)
+  - [Site Owner Goals](#site-owner-goals)
+  - [Design](#design)
+  - [Features](#features)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+  - [Technologies Used](#technologies-used)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgments](#acknowledgments)
 
 # Tic Tac Toe
 
@@ -27,6 +39,7 @@ On initial load, the sound is muted and has an unmute button to toggle the sound
 ### Returning user
 - As a returning user I want to have fun.
 - As a returning user I want to beat my opponent.
+- As a returning user I want to beat the computer.
 
 ## Design
 Its designed to be intuitive to figure out, using commonplace icons which give clear purpose messages when hovered over. 
@@ -59,7 +72,7 @@ The wireframe was produced using Paint.net. The wireframe for the Mobile and Des
 ### Layout
 This site is a single page site with 5 sections:
 - an Instruction overlay
-- control buttons to control the Sound and Instructions
+- control buttons to control the Sound, number of Players and Instructions
 - a Score area
 - a Game area
 - a Results and Restart area
@@ -67,16 +80,17 @@ This site is a single page site with 5 sections:
 ## Features
 The landing page is an overlay with an opacity of .9 that covers the entire viewport.  It explains what each icon does and the rules of Tic Tac Toe.  Once the X icon to close the page is clicked, the game is revealed.  
 
-The site has a very simple layout which includes a h1 heading stating the name of the game.  Below the h1, two large icons/buttons are displayed.  Hovering over the icons indicates their function. 
-the first icon toggles between mute and unmute, the site defaults to mute. 
+The site has a very simple layout which includes a h1 heading stating the name of the game.  Below the h1, three large icons/buttons are displayed.  Hovering over the icons indicates their function. 
 
-The second icon redisplays the overlay with the instructions.
+The first icon toggles between mute and unmute, the site defaults to mute. 
 
-The site works best in portrait and media queries are used to prevent the viewport rotating if the size of the screen is less than 320px x 767px, the exact size of the game area. 
+The second icon toggles between playing the computer or playing another player, the site defaults playing against another player.  Toggling players, resets the game board, but not the score.
 
-Below the icons, the scoreArea is displayed, these scores are updated by javascript (JS).  
+The third icon redisplays the overlay with the instructions.
 
-Then the gameBoard is displayed in a 3x4 grid, this is where the Xs and Os are displayed.  
+Below the icons, the scoreArea is displayed, these scores are updated by javascript (JS).  The Score Area shows the number of Draws/X wins/O Wins for this session, regardless of whether you play an opponent or the computer.
+
+Then the gameBoard is displayed in a 3x3 grid, this is where the Xs and Os are displayed.  
 
 In order to indicate whose turn it is, the user is presented with an X or an O when they hover over an empty cell.  If the cell is occupied, the hover is deactivated.  When the application is loaded, it initialises with X being the first player and thus, an X hovers over all 9 cells until X places their mark. 
 
@@ -85,6 +99,9 @@ On touch screen devices, (devices without a pointer), the X/O hover works by pre
 Everytime a mark is placed in a cell, a click sound is made when the game is unmuted.
 
 Everytime a mark is placed, JS determines if this has resulted in a Win or Draw, if it does, a gameOverSound is played, a div with the result is displayed, identifying X or O as the winner and the scoreArea is updated to increment the DRAW/X wins/O wins.  The Restart button is presented in this div, to run the JS code to reset the gameBoard and hover effects.  If cells remain unoccupied and a winner has not been determined, the game continues. 
+
+The site works best in portrait.  Media queries are used to prevent the viewport rotating if the size of the screen is less than 320px x 767px, the exact size of the game area. 
+
 
 ## Testing
 
@@ -138,6 +155,10 @@ I was using the incorrect path and it took a long to figure out but was fixed by
 
 This took a really long time to figure out because the error was caused by the deployment being out of sync with the code.  Git showed that the code I used had been commited to Git, but when I inspected the code in the browser, the code was a previous version of the code.  I rebuilt the deployment and the code updated in the browser and worked as expected.
 
+#### toggling between One Player and Two Player broke the game in that after the first game, the cells could not be clicked
+
+It took >10 hours to figure out that the previously applied eventListeners to handleClickComputer and handleClickPlayerVsPlayer had to be removed before the altenative handleClick was applied.
+
 ### Known Bugs
 
 - Touch screen devices make the entire gameBoard div, shimmer before displaying the hover effects.
@@ -147,7 +168,6 @@ This took a really long time to figure out because the error was caused by the d
 ### Features Left to Implement
 - Include inputs at the outset to indicate the name of Player 1 (X) and Player 2 (O).
 - Allow users to login and create a profile so that their scores could be recorded on a persistent leaderboard.  
-- Make it a one player game, playing against the computer.  This would also require a timer function in order for the leaderboard to make sense ie the player who beats the computer in the least amount of time.
 - Save player score to the leaderboard.  
 - A two player game where both players are at different devices of the same game.
 
