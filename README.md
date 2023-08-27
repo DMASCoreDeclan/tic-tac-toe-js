@@ -54,7 +54,7 @@ Great care was taken to establish a good contrast between background colours and
 ### Fonts
 There are two fonts used in the site: "Varela", backed up by sans-serif and "Permanent Marker" backed up by cursive.
 
-"Varela" is used throughout while "Permanent Marker" font is the main font used for the mark of X and O.  These fonts were imported via [Google Fonts](https://fonts.google.com/). 
+"Varela" is used throughout while "Permanent Marker" font is the main font used for the mark of X and O.  These fonts were imported via [Google Fonts](https://fonts.google.com/specimen/Permanent+Marker?query=permanent). 
 
 ### Imagery
 There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate within the realms of the actionable areas of the site.  Within the page boundaries, visual clues are given on what you can/should do, or a popup appears with concise instructions on your next possible options.  
@@ -155,7 +155,7 @@ I was using the incorrect path and it took a long to figure out but was fixed by
 
 This took a really long time to figure out because the error was caused by the deployment being out of sync with the code.  Git showed that the code I used had been commited to Git, but when I inspected the code in the browser, the code was a previous version of the code.  I rebuilt the deployment and the code updated in the browser and worked as expected.
 
-#### toggling between One Player and Two Player broke the game in that after the first game, the cells could not be clicked
+#### Toggling between One Player and Two Player broke the game in that after the first game, the cells could not be clicked
 
 It took >10 hours to figure out that the previously applied eventListeners to handleClickComputer and handleClickPlayerVsPlayer had to be removed before the altenative handleClick was applied.
 
@@ -171,7 +171,7 @@ It took >10 hours to figure out that the previously applied eventListeners to ha
 - Save player score to the leaderboard.  
 - A two player game where both players are at different devices of the same game.
 
-#### game does not look well on small devices when in landscape:
+#### The game does not look well on small devices when in landscape:
 
 [Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website) - this didn't work!
 

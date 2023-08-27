@@ -36,7 +36,7 @@ const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
 const openModal = document.getElementById('open-modal');
 const muteButton = document.getElementById('mute-button');
-const player = document.getElementById('number-of-players-one');
+const player = document.getElementById('number-of-players-two');
 //Get sound placeholders
 const clickSound = new Audio('assets/sounds/click-sound.wav');
 const gameOverSound = new Audio('assets/sounds/game-over-sound.wav');
