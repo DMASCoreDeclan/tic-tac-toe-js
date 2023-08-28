@@ -54,7 +54,13 @@ Great care was taken to establish a good contrast between background colours and
 ### Fonts
 There are two fonts used in the site: "Varela", backed up by sans-serif and "Permanent Marker" backed up by cursive.
 
-"Varela" is used throughout while "Permanent Marker" font is the main font used for the mark of X and O.  These fonts were imported via [Google Fonts](https://fonts.google.com/specimen/Permanent+Marker?query=permanent). 
+"Varela" is used throughout while "Permanent Marker" font is the main font used for the mark of X and O.  
+
+These fonts were imported from: 
+
+[Google Fonts - Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker?query=permanent). 
+
+[Google Fonts - Varela](https://fonts.google.com/?query=Varela&preview.text=Varela&preview.text_type=custom)
 
 ### Imagery
 There is no imagery in the application other than icons and hover effects.  The app was designed so that nothing can happen unless you participate within the realms of the actionable areas of the site.  Within the page boundaries, visual clues are given on what you can/should do, or a popup appears with concise instructions on your next possible options.  
@@ -72,7 +78,7 @@ The wireframe was produced using Paint.net. The wireframe for the Mobile and Des
 ### Layout
 This site is a single page site with 5 sections:
 - an Instruction overlay
-- control buttons to control the Sound, number of Players and Instructions
+- control buttons to control the Sound, Number of Players and Instructions
 - a Score area
 - a Game area
 - a Results and Restart area
@@ -100,7 +106,7 @@ Everytime a mark is placed in a cell, a click sound is made when the game is unm
 
 Everytime a mark is placed, JS determines if this has resulted in a Win or Draw, if it does, a gameOverSound is played, a div with the result is displayed, identifying X or O as the winner and the scoreArea is updated to increment the DRAW/X wins/O wins.  The Restart button is presented in this div, to run the JS code to reset the gameBoard and hover effects.  If cells remain unoccupied and a winner has not been determined, the game continues. 
 
-The site works best in portrait.  Media queries are used to prevent the viewport rotating if the size of the screen is less than 320px x 767px, the exact size of the game area. 
+The site works best in portrait.  Media queries are used to prevent the viewport rotating if the size of the screen is less than 320px x 767px, the exact size of the game area, (excluding the hidden Game Over area). 
 
 
 ## Testing
@@ -176,16 +182,6 @@ It took >10 hours to figure out that the previously applied eventListeners to ha
 [Stackoverflow fix](https://stackoverflow.com/questions/63374529/disable-landscape-view-for-a-responsive-design-website) - this didn't work!
 
 
-## Deployment
-The live link can be found here - [tic-tac-toe-js](https://dmascoredeclan.github.io/tic-tac-toe-js/)
-
- <details>
-
- <summary>Am I Responsive Images</summary>
-
-![Tic Tac Toe - Am I Responsive Image](.devcontainer/docs/images/AmIResponsiveResults.png)
- </details>
-
 ## Technologies Used
 
 ### Languages
@@ -215,6 +211,14 @@ The project was deployed using GitHub pages. The steps to deploy using GitHub pa
 
 The live link can be found here - [Tic Tac Toe](https://dmascoredeclan.github.io/tic-tac-toe-js/)
 
+
+ <details>
+
+ <summary>Am I Responsive Images</summary>
+
+![Tic Tac Toe - Am I Responsive Image](.devcontainer/docs/images/AmIResponsiveResults.png)
+ </details>
+
 ## Credits
 
 ### Media
@@ -231,9 +235,9 @@ The live link can be found here - [Tic Tac Toe](https://dmascoredeclan.github.io
 
 [Flaticon](https://www.flaticon.com/free-icons/vs) - One/Two player icons
  
-- https://www.flaticon.com/search?word=player%20versus%20computer
+- https://www.flaticon.com/free-icon/computer_2736362
  
-- https://www.flaticon.com/search?word=player%20versus%20player
+- https://www.flaticon.com/free-icon/player-versus-player_5515909
 
 
 ### Resources Used
